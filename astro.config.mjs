@@ -6,7 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), lit()],
+  integrations: [lit(), mdx()],
   output: "server",
   adapter: cloudflare({routes: 'auto', mode: 'advanced'}) // @see https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/#modes
 });
