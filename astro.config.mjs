@@ -7,5 +7,5 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   integrations: [lit()],
   output: "hybrid",
-  adapter: cloudflare({routes: 'auto', mode: 'advanced'}) // @see https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/#modes
+  adapter: cloudflare({routes: {strategy: 'auto'}, mode: 'advanced'}) // @see https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/#modes
 });
