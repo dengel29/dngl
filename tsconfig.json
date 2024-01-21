@@ -29,10 +29,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "forceConsistentCasingInFileNames": true
   },
-  "experimentalDecorators": true,
-  "useDefineForClassFields": false,
+  "types": ["@cloudflare/workers-types"],
   "extends": "astro/tsconfigs/base",
   "include": ["src/**/*.ts"],
   "exclude": []

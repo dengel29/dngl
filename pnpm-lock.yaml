@@ -28,6 +28,9 @@ dependencies:
     version: 1.6.17
 
 devDependencies:
+  '@cloudflare/workers-types':
+    specifier: ^4.20240117.0
+    version: 4.20240117.0
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -434,7 +437,6 @@ packages:
 
   /@cloudflare/workers-types@4.20240117.0:
     resolution: {integrity: sha512-HQU8lJhaJVh8gQXFtVA7lZwd0hK1ckIFjRuxOXkVN2Z9t7DtzNbA2YTwBry5thKNgF5EwjN4THjHg5NUZzj05A==}
-    dev: false
 
   /@emmetio/extract-abbreviation@0.1.6:
     resolution: {integrity: sha512-Ce3xE2JvTSEbASFbRbA1gAIcMcZWdS2yUYRaQbeM0nbOzaZrUYfa3ePtcriYRZOZmr+CkKA+zbjhvTpIOAYVcw==}
