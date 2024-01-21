@@ -1,0 +1,27 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+import { HeaderNav } from "../components/header-nav/HeaderNav";
+import { XCheckbox } from "../components/x-checkbox/XCheckbox";
+---
+
+<!-- Below is your "component template." It's just HTML, but with
+     some magic sprinkled in to help you build great templates. -->
+<html>
+  <head>
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <HeaderNav client:load />
+    <XCheckbox
+      todo-text="Get the about screen working, multi-ple pages bb"
+      client:idle
+    />
+  </body>
+</html>
