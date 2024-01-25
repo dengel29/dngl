@@ -7,6 +7,6 @@ import cloudflare from "@astrojs/cloudflare";
 // @see https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/#modes
 export default defineConfig({
   integrations: [lit()],
-  output: "static",
-  adapter: cloudflare() 
+  output: "server",
+  adapter: cloudflare({mode: 'directory'}) 
 });
