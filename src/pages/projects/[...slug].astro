@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 // 1. Get the slug from the incoming server request
 const { slug } = Astro.params;
+console.log("params", Astro.params);
 console.log({ sluggerino: slug });
 if (slug === undefined) {
   throw new Error("Slug is required");
