@@ -1,7 +1,7 @@
 ---
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
-import { HeaderNav } from "../components/header-nav/HeaderNav";
+import { BaseLayout } from "../components/base-layout/BaseLayout";
 import { XCheckbox } from "../components/x-checkbox/XCheckbox";
 ---
 
@@ -18,8 +18,13 @@ import { XCheckbox } from "../components/x-checkbox/XCheckbox";
     />
   </head>
   <body>
-    <HeaderNav client:load />
-    <XCheckbox todo-text="Starting to get LIT" client:idle />
-    <my-counter></my-counter>
+    <BaseLayout>
+      <div slot="main-content">
+        <XCheckbox
+          todo-text="Why don't you make a nice home page?"
+          client:load
+        />
+      </div>
+    </BaseLayout>
   </body>
 </html>

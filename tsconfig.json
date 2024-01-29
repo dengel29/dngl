@@ -30,9 +30,9 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true
   },
-  "types": ["@cloudflare/workers-types"],
   "extends": "astro/tsconfigs/base",
   "include": ["src/**/*.ts"],
   "exclude": []

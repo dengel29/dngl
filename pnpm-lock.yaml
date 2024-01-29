@@ -14,6 +14,9 @@ dependencies:
   '@lit-labs/ssr':
     specifier: ^3.2.1
     version: 3.2.1
+  '@lit/task':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@webcomponents/template-shadowroot':
     specifier: ^0.2.1
     version: 0.2.1
@@ -633,6 +636,12 @@ packages:
     resolution: {integrity: sha512-e067EuTNNgOHm1tZcc0Ia7TCzD/9ZpoPegHKgesrGK6pSDRGkGDAQbYuQclqLPIoJ9eC8Kb9mYtGryWcM5AywA==}
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.1.2
+    dev: false
+
+  /@lit/task@1.0.0:
+    resolution: {integrity: sha512-7jocGBh3yGlo3kKxQggZph2txK4X5GYNWp2FAsmV9u2spzUypwrzRzXe8I72icAb02B00+k2nlvxVcrQB6vyrw==}
+    dependencies:
+      '@lit/reactive-element': 2.0.3
     dev: false
 
   /@netlify/functions@2.5.1:

@@ -1,5 +1,23 @@
 ---
-const hello = "Nice to meet you";
+import { BaseLayout } from "../components/base-layout/BaseLayout";
+import { ProjectList } from "../components/project-list/ProjectList";
 ---
 
-<h1>{hello}</h1>
+<html>
+  <head>
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <BaseLayout client:visible>
+      <div slot="main-content">
+        <ProjectList client:load />
+      </div>
+    </BaseLayout>
+  </body>
+</html>

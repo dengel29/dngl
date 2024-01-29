@@ -1,7 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement } from "lit/decorators.js";
 import { data } from "./header-data";
-import { rootStyles } from "../../styles/index";
 
 @customElement("header-nav")
 export class HeaderNav extends LitElement {
@@ -20,7 +19,7 @@ export class HeaderNav extends LitElement {
       <header>
         <div class="nav-content">
           <nav>
-            <p class="name-heading">DAN ENGEL</p>
+            <a href="/" class="name-heading">DAN ENGEL</a>
             <ul>
               ${navItems}
             </ul>
@@ -32,10 +31,17 @@ export class HeaderNav extends LitElement {
 
   static get styles() {
     return [
-      rootStyles,
       css`
         :host {
           --start-padding: 1.3rem;
+        }
+        .nav-content {
+          box-sizing: content-box;
+          border-radius: 4px;
+          margin: 0 auto;
+          max-width: 100vw;
+          border-bottom: 2px solid rebeccapurple;
+          box-shadow: 2px 1px;
         }
         a,
         p {
@@ -45,6 +51,10 @@ export class HeaderNav extends LitElement {
           padding-inline-start: var(--start-padding);
           font-size: var(--size-6);
           font-weight: 500;
+          text-decoration: none;
+          &:visited {
+            color: black;
+          }
         }
         ul {
           display: flex;
@@ -56,15 +66,6 @@ export class HeaderNav extends LitElement {
           margin-inline-end: 1.3em;
         }
         nav {
-          background-position: 5cm 5cm;
-          background-size: 15px 15px;
-          background-blend-mode: soft-light;
-          background-image: linear-gradient(
-              to top right,
-              var(--surface-2) 10px,
-              transparent 5px
-            ),
-            linear-gradient(to right, var(--surface-1) 1px, transparent 10px);
           overflow-x: hidden;
           min-height: 7vh;
           & ul {
