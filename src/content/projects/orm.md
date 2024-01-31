@@ -16,9 +16,8 @@ tech:
   - ActiveStorage
   - WeChat Miniprogram
 role: Back-end
-# inActionVideo: /images/kappamon/kap-in-action.mp4
 startDate: April 2019 
-endDate: now
+endDate: April 2020
 visible: false
 ---
 *More details coming soon*

@@ -20,7 +20,7 @@ export class XCheckbox extends LitElement {
         .checked {
           text-decoration: line-through;
           filter: blur(1px);
-          opacity: 0.4;
+          opacity: 0.8;
         }
       `,
     ];

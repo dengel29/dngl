@@ -1,20 +1,39 @@
 ---
-import { getEntry } from "astro:content";
+import { BaseLayout } from "../../components/base-layout/BaseLayout";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
 // 1. Get the slug from the incoming server request
-const { slug } = Astro.params;
-console.log("params", Astro.params);
-console.log({ sluggerino: slug });
-if (slug === undefined) {
-  throw new Error("Slug is required");
+import { getCollection } from "astro:content";
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("projects");
+  return projectEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
-// 2. Query for the entry directly using the request slug
-const entry = await getEntry("projects", slug);
-// 3. Redirect if the entry does not exist
-if (entry === undefined) {
-  return Astro.redirect("/404");
-}
-// 4. (Optional) Render the entry to HTML in the template
+
+const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Content />
+<html>
+  <head
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/project-post.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    /></head
+  >
+  <body>
+    <BaseLayout>
+      <ProjectLayout frontmatter={entry.data} slot="main-content">
+        <Content />
+      </ProjectLayout>
+    </BaseLayout></body
+  >
+</html>

@@ -5,6 +5,7 @@ import { ProjectList } from "../../components/project-list/ProjectList";
 
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="./src/styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +16,7 @@ import { ProjectList } from "../../components/project-list/ProjectList";
   </head>
   <body>
     <BaseLayout client:visible>
-      <div slot="main-content">
-        <ProjectList client:load />
-      </div>
+      <ProjectList slot="main-content" client:load />
     </BaseLayout>
   </body>
 </html>

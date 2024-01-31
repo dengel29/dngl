@@ -13,16 +13,14 @@ export class HeaderNav extends LitElement {
   render() {
     const navItems = [];
     for (const i of this.navData) {
-      navItems.push(html`<li><a href=${i.path}>${i.displayName}</a></li>`);
+      navItems.push(html`<a href=${i.path}>${i.displayName}</a> `);
     }
     return html`
       <header>
         <div class="nav-content">
           <nav>
             <a href="/" class="name-heading">DAN ENGEL</a>
-            <ul>
-              ${navItems}
-            </ul>
+            <div class="nav-items">${navItems}</div>
           </nav>
         </div>
       </header>
@@ -33,22 +31,21 @@ export class HeaderNav extends LitElement {
     return [
       css`
         :host {
-          --start-padding: 1.3rem;
+          --start-padding: 2.6vw;
+        }
+        header {
+          background: transparent;
         }
         .nav-content {
           box-sizing: content-box;
           border-radius: 4px;
-          margin: 0 auto;
-          max-width: 100vw;
-          border-bottom: 2px solid rebeccapurple;
-          box-shadow: 2px 1px;
+          width: 95vw;
         }
         a,
         p {
-          font-family: var(--font-1);
+          font-family: var(--font-0);
         }
         .name-heading {
-          padding-inline-start: var(--start-padding);
           font-size: var(--size-6);
           font-weight: 500;
           text-decoration: none;
@@ -56,22 +53,18 @@ export class HeaderNav extends LitElement {
             color: black;
           }
         }
-        ul {
+        .nav-items {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
         }
-        li {
-          list-style: none;
-          margin-inline-end: 1.3em;
-        }
         nav {
           overflow-x: hidden;
           min-height: 7vh;
-          & ul {
+          padding-inline-start: var(--start-padding);
+          & .nav-items {
             max-width: 40vw;
             min-width: 35vw;
-            padding-inline-start: var(--start-padding);
           }
         }
       `,
