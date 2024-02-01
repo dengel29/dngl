@@ -1,0 +1,17 @@
+---
+import type { BlogFrontMatter } from "../types/Blog";
+type Props = BlogFrontMatter;
+const { frontmatter: fm, headings } = Astro.props;
+---
+
+<article class="page-wrapper">
+  <div class="page-header">
+    <h1 class="page-headline">{fm.title}</h1>
+    <h2>{fm.date}</h2>
+  </div>
+
+  <div class="[ page-content gap-top-700 ]">
+    <!-- <img src={fm.examplePic} alt="" /> -->
+    <slot />
+  </div>
+</article>

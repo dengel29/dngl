@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { type Project } from "../../types/Project";
+import { listStyles } from "../../styles/lists";
 
 @customElement("project-card")
 export class ProjectCard extends LitElement {
@@ -27,14 +28,7 @@ export class ProjectCard extends LitElement {
     `;
   }
 
-  get styles() {
-    return css`
-      a {
-        text-decoration-color: black;
-      }
-      a:visited {
-        text-decoration-color: red;
-      }
-    `;
+  static get styles() {
+    return [listStyles, css``];
   }
 }

@@ -5,10 +5,7 @@ const { frontmatter: fm, headings } = Astro.props;
 ---
 
 <article class="page-wrapper">
-  <div
-    class="project-header"
-    style="background-image: url({fm.heroImage.url}), linear-gradient(90deg, #32648530, #5351bb1d)"
-  >
+  <div class="project-header" style="background-image: url({fm.heroImage.url})">
     <div class="page-headline">
       <h1>{fm.title}</h1>
     </div>

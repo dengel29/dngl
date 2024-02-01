@@ -174,7 +174,51 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"projects": {
+		"blog": {
+"aws-lambda-postgres-pt-1.md": {
+	id: "aws-lambda-postgres-pt-1.md";
+  slug: "aws-lambda-postgres-pt-1";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"aws-lambda-postgres-pt-2.md": {
+	id: "aws-lambda-postgres-pt-2.md";
+  slug: "aws-lambda-postgres-pt-2";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"bash-script-distributed.md": {
+	id: "bash-script-distributed.md";
+  slug: "bash-script-distributed";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"making-supercuts-from-youtube-videos.md": {
+	id: "making-supercuts-from-youtube-videos.md";
+  slug: "making-supercuts-from-youtube-videos";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"readings-shortcut.md": {
+	id: "readings-shortcut.md";
+  slug: "readings-shortcut";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"videogrep.md": {
+	id: "videogrep.md";
+  slug: "videogrep";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+};
+"projects": {
 "choxue.md": {
 	id: "choxue.md";
   slug: "choxue";

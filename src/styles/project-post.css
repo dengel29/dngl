@@ -10,7 +10,7 @@ article {
   };
   @media (width < 768px) {
     max-width: initial;
-    & .project-header, .project-summary__wrapper, h4{
+    & .project-header, .project-summary__wrapper, h4 {
       max-width: 100%;
       text-align: center
     }

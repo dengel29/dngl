@@ -1,0 +1,40 @@
+---
+import { BaseLayout } from "../../components/base-layout/BaseLayout";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+// 1. Get the slug from the incoming server request
+import { getCollection } from "astro:content";
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("blog");
+  return projectEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/blog-post.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    /></head
+  >
+  <body>
+    <BaseLayout>
+      <BlogLayout frontmatter={entry.data} slot="main-content">
+        <Content />
+      </BlogLayout>
+    </BaseLayout>
+  </body>
+</html>

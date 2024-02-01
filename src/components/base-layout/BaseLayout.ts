@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { customElement } from "lit/decorators.js";
 import { rootStyles } from "../../styles/index.js";
+import "../../styles/index.css";
 import "../header-nav/HeaderNav";
 
 @customElement("base-layout")
@@ -16,7 +17,7 @@ export class BaseLayout extends LitElement {
                 <p>
                   Main content served here (hint: the root element of the main
                   content element should have the following attribute
-                  <code>slot="main-content"</code>
+                  <code>slot="main-content")</code>
                 </p>
               </slot>
             </div>
@@ -39,7 +40,7 @@ export class BaseLayout extends LitElement {
         .bg {
           background-image: radial-gradient(
             circle at 1px 1px,
-            rgba(70, 70, 70, 0.1) 1.3px,
+            rgba(70, 70, 70, 0.1) 0.4px,
             whitesmoke 0
           );
           background-size: 8px 8px;
