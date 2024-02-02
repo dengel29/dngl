@@ -1,3 +1,198 @@
 @import 'open-props/style';
 @import 'open-props/normalize';
 @import 'open-props/buttons';
+
+:root {
+  & * {
+    box-sizing: border-box;
+  }
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --brand: --var(--green-9);
+
+  /* defaults, before preference is registered */
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --surface-3: var(--surface-3-light);
+  --surface-4: var(--surface-4-light);
+
+  @media (prefers-color-scheme: dark) {
+    --brand: var(--brand-dark);
+
+    --text-1: var(--text-1-dark);
+    --text-2: var(--text-2-dark);
+    --text-3: var(--text-3-dark);
+
+    --surface-1: var(--surface-1-dark);
+    --surface-2: var(--surface-2-dark);
+    --surface-3: var(--surface-3-dark);
+    --surface-4: var(--surface-4-dark);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --brand: var(--brand-dark);
+
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+    --text-3: var(--text-3-light);
+
+    --surface-1: var(--surface-1-light);
+    --surface-2: var(--surface-2-light);
+    --surface-3: var(--surface-3-light);
+    --surface-4: var(--surface-4-light);
+  }
+}
+
+html {
+  /* light mode vars */
+  --brand-light:black;
+  --text-1-light: black;
+  --text-2-light: black;
+  --text-3-light:  black;
+  --surface-1-light: white;
+  --surface-2-light: white;
+  --surface-3-light: white;
+  --surface-4-light: white;
+  --surface-5-light: #C5D9E2;
+  
+  /* dark mode vars */
+  --brand-dark: white;
+  --text-1-dark: hsla(0, 0%, 100%, 1);
+  --text-2-dark: hsl(60, 73%, 81%, 1);
+  --text-3-dark:  hsla(30, 10%, 100%, 1);
+  --surface-1-dark: black;
+  --surface-2-dark: black;
+  --surface-3-dark: black;
+  --surface-4-dark: black;
+  background-color: var(--surface-1);
+  color: var(--text-1);
+  accent-color: var(--link);
+
+  input {
+    box-sizing: border-box;
+    -webkit-box-shadow: none;
+    -webkit-border:none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 3px solid currentColor;
+    /* outline: initial; */
+  }
+
+  select:focus, input:focus {
+    /* background-color: green; */
+    outline: none;
+    border-bottom: 3px solid var(--brand);
+  }
+  
+  & nav > label {
+    color: var(--brand);
+  }
+}
+
+a {
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: calc(3.2em * .66);
+  line-height: 1.1;
+}
+
+h1,h2,h3 {
+  color: var(--brand)
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.page-container {
+  @media (width >= 768px) {
+    padding-inline: 2em;
+  };
+  background-color: var(--surface-1);
+  height: 100lvh
+}
+
+
+.btn.neutral {
+  background-color: var(--indigo-8);
+}
+
+.btn.submit {
+  background-color: var(--green-8);
+}
+
+label {
+  color: var(--text-1)
+}
+
+input, select {
+  background-color: var(--surface-3);
+  color: var(--text-1)
+}
+
+::marker {
+  color: var(--brand)
+}
+
+p {
+  font-size: 1.4em;
+  margin-block-end: 0.4em
+}
+
+li {
+  margin-block: 1em
+}
+
+code {
+  font-size: .9em;
+}
+pre {
+  margin: 0 auto;
+}
+article {
+    background-color: var(--surface-1);
+    h1,h2,h3,h4 {
+      color: var(--text-1)
+    }
+    aside, blockquote, details {
+      color: var(--text-1)
+  }
+}

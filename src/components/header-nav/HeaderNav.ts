@@ -33,9 +33,6 @@ export class HeaderNav extends LitElement {
         :host {
           --start-padding: 2.6vw;
         }
-        header {
-          background: transparent;
-        }
         .nav-content {
           box-sizing: content-box;
           border-radius: 4px;
@@ -50,7 +47,7 @@ export class HeaderNav extends LitElement {
           font-weight: 500;
           text-decoration: none;
           &:visited {
-            color: black;
+            color: var(--text-1);
           }
         }
         .nav-items {

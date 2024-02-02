@@ -10,8 +10,6 @@ const { frontmatter: fm, headings } = Astro.props;
     <h2>{fm.date}</h2>
   </div>
 
-  <div class="[ page-content gap-top-700 ]">
-    <!-- <img src={fm.examplePic} alt="" /> -->
-    <slot />
-  </div>
+  <!-- <img src={fm.examplePic} alt="" /> -->
+  <slot />
 </article>
