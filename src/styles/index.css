@@ -22,6 +22,8 @@
   /* defaults, before preference is registered */
   --text-1: var(--text-1-light);
   --text-2: var(--text-2-light);
+  --text-3: var(--text-3-light);
+  --link-text: var(--link-text-light)
   --surface-1: var(--surface-1-light);
   --surface-2: var(--surface-2-light);
   --surface-3: var(--surface-3-light);
@@ -33,6 +35,7 @@
     --text-1: var(--text-1-dark);
     --text-2: var(--text-2-dark);
     --text-3: var(--text-3-dark);
+    --link-text: var(--link-text-dark);
 
     --surface-1: var(--surface-1-dark);
     --surface-2: var(--surface-2-dark);
@@ -46,6 +49,7 @@
     --text-1: var(--text-1-light);
     --text-2: var(--text-2-light);
     --text-3: var(--text-3-light);
+    --link-text: var(--link-text-light);
 
     --surface-1: var(--surface-1-light);
     --surface-2: var(--surface-2-light);
@@ -60,6 +64,7 @@ html {
   --text-1-light: black;
   --text-2-light: black;
   --text-3-light:  black;
+  --link-text-light: hsl(240, 79%, 60%);
   --surface-1-light: white;
   --surface-2-light: white;
   --surface-3-light: white;
@@ -71,12 +76,16 @@ html {
   --text-1-dark: hsla(0, 0%, 100%, 1);
   --text-2-dark: hsl(60, 73%, 81%, 1);
   --text-3-dark:  hsla(30, 10%, 100%, 1);
+  --link-text-dark: hsl(240, 79%, 60%);
   --surface-1-dark: black;
   --surface-2-dark: black;
   --surface-3-dark: black;
   --surface-4-dark: black;
   background-color: var(--surface-1);
   color: var(--text-1);
+  a {
+    color: var(--link)
+  }
   accent-color: var(--link);
 
   input {
@@ -186,13 +195,19 @@ code {
 }
 pre {
   margin: 0 auto;
+  max-width: 95%;
+  overflow-x: scroll;
 }
 article {
     background-color: var(--surface-1);
+    overflow-x: hidden;
     h1,h2,h3,h4 {
       color: var(--text-1)
     }
     aside, blockquote, details {
       color: var(--text-1)
+  }
+  summary::marker {
+    color: var(--text-1)
   }
 }

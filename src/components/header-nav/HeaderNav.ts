@@ -41,6 +41,7 @@ export class HeaderNav extends LitElement {
         a,
         p {
           font-family: var(--font-0);
+          color: var(--text-1);
         }
         .name-heading {
           font-size: var(--size-6);
@@ -59,9 +60,16 @@ export class HeaderNav extends LitElement {
           overflow-x: hidden;
           min-height: 7vh;
           padding-inline-start: var(--start-padding);
-          & .nav-items {
-            max-width: 40vw;
-            min-width: 35vw;
+          @media (width > 768) {
+            & .nav-items {
+              max-width: 40vw;
+              min-width: 35vw;
+            }
+          }
+          @media (width < 768) {
+            & .nav-items {
+              max-width: 50px;
+            }
           }
         }
       `,

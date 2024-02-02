@@ -56,9 +56,10 @@ export class BaseLayout extends LitElement {
             var(--surface-1) 0
           );
           background-size: 8px 8px;
-          box-shadow: inset -1px 0px 0px 1px rgb(255 255 255);
-          height: 100vh;
+          height: 100lvh;
           width: 100vw;
+          margin: 0;
+          padding: 0;
         }
         .full-screen {
           width: 100%;
