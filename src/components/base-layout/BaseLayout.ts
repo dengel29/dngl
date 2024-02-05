@@ -55,6 +55,7 @@ export class BaseLayout extends LitElement {
             var(--text-1) 0.4px,
             var(--surface-1) 0
           );
+          box-shadow: inset -20px -20px 200px 100px var(--surface-1);
           background-size: 8px 8px;
           height: 100lvh;
           width: 100vw;

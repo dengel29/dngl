@@ -20,15 +20,54 @@ import { XCheckbox } from "../components/x-checkbox/XCheckbox";
         padding: 0;
         height: 100vh;
       }
+      #main-content {
+        display: grid;
+        place-items: center;
+        padding: 2em 2em;
+      }
+      .todos {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
     <BaseLayout>
-      <div slot="main-content">
-        <XCheckbox
-          todo-text="Why don't you make a nice home page?"
-          client:load
-        />
+      <div slot="main-content" id="main-content">
+        <div>
+          <p>
+            Hey there, I'm moving over my website from <a
+              href="https://dan-engel.fyi">my old 11ty site</a
+            > to here, rebuilding with Astro and Web Components. So for a little
+            while things may seem a bit empty while I get everything over here.
+          </p>
+          <p>Here's a small list of what's left to do:</p>
+        </div>
+        <div class="todos">
+          <XCheckbox todo-text="Pull in old articles" is-checked client:load />
+          <XCheckbox todo-text="Pull in old projects" is-checked client:load />
+          <XCheckbox
+            todo-text="Get dark and light mode styles working"
+            is-checked
+            client:load
+          />
+          <XCheckbox
+            todo-text="Tweak the colors – black is too black, white is too white"
+            client:load
+          />
+          <XCheckbox todo-text="Make a nice home page" client:load />
+          <XCheckbox
+            todo-text="Bring my GH Actions-powered  Things I'm Reading section back"
+            client:load
+          />
+          <XCheckbox
+            todo-text="Re-think design and purpose Notes and Now page"
+            client:load
+          />
+          <XCheckbox
+            todo-text="Decide on a new home for image assets"
+            client:load
+          />
+        </div>
       </div>
     </BaseLayout>
   </body>

@@ -38,10 +38,10 @@ export class HeaderNav extends LitElement {
           border-radius: 4px;
           width: 95vw;
         }
-        a,
-        p {
+        a {
           font-family: var(--font-0);
           color: var(--text-1);
+          margin-inline-end: 1em;
         }
         .name-heading {
           font-size: var(--size-6);
@@ -55,6 +55,7 @@ export class HeaderNav extends LitElement {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          max-width: 45vw;
         }
         nav {
           overflow-x: hidden;
@@ -62,8 +63,7 @@ export class HeaderNav extends LitElement {
           padding-inline-start: var(--start-padding);
           @media (width > 768) {
             & .nav-items {
-              max-width: 40vw;
-              min-width: 35vw;
+              min-width: 40vw;
             }
           }
           @media (width < 768) {

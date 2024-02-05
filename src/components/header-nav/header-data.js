@@ -4,12 +4,12 @@ export const data = [
     "path": "/blog"
   },
   {
-    "displayName": "/notes",
-    "path": "/notes"
+    "displayName": "/notes⚠️",
+    "path": ""
   },
   {
-    "displayName": "/now",
-    "path": "/now"
+    "displayName": "/now⚠️",
+    "path": ""
   },
   {
     "displayName": "/projects",
