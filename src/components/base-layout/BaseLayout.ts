@@ -51,12 +51,12 @@ export class BaseLayout extends LitElement {
         }
         .bg {
           background-image: radial-gradient(
-            circle at 1px 1px,
-            var(--text-1) 0.4px,
+            circle at 0.9px 0.9px,
+            var(--text-1) 0.6px,
             var(--surface-1) 0
           );
-          box-shadow: inset -20px -20px 200px 100px var(--surface-1);
-          background-size: 8px 8px;
+          box-shadow: inset 15px 15px 400px 80px var(--surface-1);
+          background-size: 5px 5px;
           height: 100lvh;
           width: 100vw;
           margin: 0;

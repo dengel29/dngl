@@ -77,10 +77,11 @@ html {
   --text-2-dark: hsl(60, 73%, 81%, 1);
   --text-3-dark:  hsla(30, 10%, 100%, 1);
   --link-text-dark: hsl(240, 79%, 60%);
-  --surface-1-dark: black;
-  --surface-2-dark: black;
-  --surface-3-dark: black;
-  --surface-4-dark: black;
+  /* --surface-1-dark: hsl(233, 10%, 8%); */
+  --surface-1-dark: hsl(230, 15%, 16%);
+  --surface-2-dark: hsl(0, 0%, 8%);
+  --surface-3-dark: hsl(0, 0%, 8%);
+  --surface-4-dark: hsl(0, 0%, 8%);
   background-color: var(--surface-1);
   color: var(--text-1);
   a {
@@ -95,11 +96,9 @@ html {
     box-shadow: none;
     border: none;
     border-bottom: 3px solid currentColor;
-    /* outline: initial; */
   }
 
   select:focus, input:focus {
-    /* background-color: green; */
     outline: none;
     border-bottom: 3px solid var(--brand);
   }

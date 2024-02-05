@@ -8,7 +8,13 @@ import "./BlogCard";
 export class BlogList extends LitElement {
   private getBlogs = new Task(this, {
     task: async ([], {}) => {
-      return await getCollection("blog");
+      // return await getCollection("blog");
+      const blogs = await getCollection("blog");
+      const sortedBlogs = blogs.sort(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+      );
+      console.log(sortedBlogs[0].data.date);
+      return sortedBlogs;
     },
     args: () => [],
   });
