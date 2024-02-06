@@ -1,5 +1,5 @@
 ---
-import { BaseLayout } from "../components/base-layout/BaseLayout";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { XCheckbox } from "../components/x-checkbox/XCheckbox";
 ---
 
@@ -33,15 +33,14 @@ import { XCheckbox } from "../components/x-checkbox/XCheckbox";
   <body>
     <BaseLayout>
       <div slot="main-content" id="main-content">
-        <div>
-          <p>
-            Hey there, I'm moving over my website from <a
-              href="https://dan-engel.fyi">my old 11ty site</a
-            > to here, rebuilding with Astro and Web Components. So for a little
-            while things may seem a bit empty while I get everything over here.
-          </p>
-          <p>Here's a small list of what's left to do:</p>
-        </div>
+        <p>
+          Hey there, I'm moving over my website from <a
+            href="https://dan-engel.fyi">my old 11ty site</a
+          > to here, rebuilding with Astro and Web Components. So for a little while
+          things may seem a bit empty while I get everything over here.
+        </p>
+        <p>Here's a small list of what's left to do:</p>
+
         <div class="todos">
           <XCheckbox todo-text="Pull in old articles" is-checked client:load />
           <XCheckbox todo-text="Pull in old projects" is-checked client:load />

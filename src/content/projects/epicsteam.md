@@ -19,7 +19,7 @@ tech:
   - Vue
 role: Full-stack
 startDate: July 2020 
-endDate: now
+endDate: September 2020
 visible: false
 ---
 

@@ -1,3 +1,6 @@
+// note: no longer using this file, in favor of a .astro layout so as not to make the entire page an 'island'
+// keeping it here for reference on :host styling
+
 import { LitElement, html, css } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { rootStyles } from "../../styles/index.js";
