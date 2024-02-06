@@ -8,7 +8,12 @@ import "./ProjectCard";
 export class ProjectList extends LitElement {
   private _getProjects = new Task(this, {
     task: async ([], {}) => {
-      return await getCollection("projects");
+      const projects = await getCollection("projects");
+
+      const sortedProjects = projects
+        .filter((p) => p.data.draft != true)
+        .sort((a, b) => b.data.endDate.valueOf() - a.data.startDate.valueOf());
+      return sortedProjects;
     },
     args: () => [],
   });
@@ -17,8 +22,8 @@ export class ProjectList extends LitElement {
     return html`
       ${this._getProjects.render({
         pending: () => html`<p>Running task...</p>`,
-        complete: (projects) =>
-          html`${projects.map((p) => {
+        complete: (sortedProjects) =>
+          html`${sortedProjects.map((p) => {
             return html`<project-card .project=${p}></project-card>`;
           })} `,
         error: (error) => html`<p>Oops, something went wrong: ${error}</p>`,

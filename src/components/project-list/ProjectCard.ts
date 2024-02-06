@@ -12,6 +12,13 @@ export class ProjectCard extends LitElement {
     this.project = project;
   }
 
+  private _formatDate(date: Date) {
+    return Intl.DateTimeFormat("en-US", {
+      month: "long",
+      year: "numeric",
+    }).format(date);
+  }
+
   protected render() {
     return html`
       <div class="project-card__container">
@@ -19,8 +26,8 @@ export class ProjectCard extends LitElement {
           <h2 class="project-card__title">${this.project.data.title}</h2>
           <div class="project-card__details">
             <span
-              >${this.project.data.startDate} to
-              ${this.project.data.endDate}</span
+              >${this._formatDate(this.project.data.startDate)} to
+              ${this._formatDate(this.project.data.endDate)}</span
             >
           </div>
         </a>

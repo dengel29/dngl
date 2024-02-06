@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { customElement } from "lit/decorators.js";
 import { data } from "./header-data";
+import "../../styles/index.css";
 
 @customElement("header-nav")
 export class HeaderNav extends LitElement {
@@ -40,7 +41,6 @@ export class HeaderNav extends LitElement {
         }
         a {
           font-family: var(--font-0);
-          color: var(--text-1);
           margin-inline-end: 1em;
         }
         .name-heading {

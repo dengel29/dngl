@@ -15,8 +15,9 @@ export type ProjectFrontMatter = MarkdownLayoutProps<{
   skills: string[];
   tech: string[];
   role: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   visible: boolean;
   inActionVideo?: string | undefined;
+  draft: boolean;
 }>;
