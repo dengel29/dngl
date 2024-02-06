@@ -18,9 +18,10 @@ const projectCollection = defineCollection({
     tech: z.array(z.string()),
     role: z.string(),
     inActionVideo: z.string().optional(),
-    startDate: z.date().or(z.string()),
-    endDate: z.date().or(z.string()),
+    startDate: z.string().transform((str) => new Date(str)),
+    endDate: z.string().transform((str) => new Date(str)),
     visible: z.boolean().default(true),
+    draft: z.boolean().default(false),
   }),
 });
 
@@ -29,6 +30,7 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.string().transform((str) => new Date(str)),
+    draft: z.boolean().default(false),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)

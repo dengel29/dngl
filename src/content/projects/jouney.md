@@ -19,5 +19,6 @@ role: Back-end
 startDate: December 2017 
 endDate: December 2017
 visible: false
+draft: true
 ---
 *More details coming soon*

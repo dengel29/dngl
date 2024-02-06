@@ -19,6 +19,7 @@ inActionVideo: /images/maze/maze-in-action-1.m4v
 startDate: April 2021 
 endDate: May 2021
 visible: true
+draft: true
 ---
 ## Happy Path
 
