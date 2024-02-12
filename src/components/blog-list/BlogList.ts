@@ -38,7 +38,7 @@ export class BlogList extends LitElement {
     `;
   }
 
-  static styles() {
+  static get styles() {
     return [
       listStyles,
       css`

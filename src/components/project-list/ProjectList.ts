@@ -34,7 +34,7 @@ export class ProjectList extends LitElement {
     `;
   }
 
-  static styles() {
+  static get styles() {
     return [
       listStyles,
       css`
