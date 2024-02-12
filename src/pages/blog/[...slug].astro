@@ -2,19 +2,21 @@
 import BaseHead from "../../layouts/BaseHead.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
+import { Blog, BlogData } from "../../types/Blog";
 // 1. Get the slug from the incoming server request
-import { getCollection } from "astro:content";
+import { getCollection, CollectionEntry } from "astro:content";
 export const prerender = true;
+import "../../styles/index.css";
 
 export async function getStaticPaths() {
-  const projectEntries = await getCollection("blog");
-  return projectEntries.map((entry) => ({
+  const blogEntries: Blog[] = await getCollection("blog");
+  return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry }: { entry: Blog } = Astro.props;
 const { Content } = await entry.render();
 ---
 
