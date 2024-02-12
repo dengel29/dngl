@@ -39,15 +39,6 @@ export class BlogList extends LitElement {
   }
 
   static get styles() {
-    return [
-      listStyles,
-      css`
-        .post-list__container {
-          padding: 100px;
-          background-color: blue;
-          border: 20px solid red;
-        }
-      `,
-    ];
+    return [listStyles];
   }
 }

@@ -35,13 +35,6 @@ export class ProjectList extends LitElement {
   }
 
   static get styles() {
-    return [
-      listStyles,
-      css`
-        .post-list__container {
-          padding-inline: 100px;
-        }
-      `,
-    ];
+    return [listStyles];
   }
 }
