@@ -21,6 +21,7 @@ role: Full-stack
 startDate: July 2020 
 endDate: September 2020
 visible: false
+draft: true
 ---
 
 *More details coming soon*

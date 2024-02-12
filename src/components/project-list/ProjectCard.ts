@@ -22,7 +22,10 @@ export class ProjectCard extends LitElement {
   protected render() {
     return html`
       <div class="project-card__container">
-        <a .href="/projects/${this.project.slug}" class="project-card__inner">
+        <a
+          .href="/projects/${this.project.slug}"
+          class="project-card__container"
+        >
           <h2 class="project-card__title">${this.project.data.title}</h2>
           <div class="project-card__details">
             <span
@@ -36,6 +39,6 @@ export class ProjectCard extends LitElement {
   }
 
   static get styles() {
-    return [listStyles, css``];
+    return [listStyles];
   }
 }

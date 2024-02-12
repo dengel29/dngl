@@ -3,21 +3,14 @@
 // is your "component frontmatter". It never runs in the browser.
 import { HeaderNav } from "../components/header-nav/HeaderNav";
 import { XCheckbox } from "../components/x-checkbox/XCheckbox";
+import BaseHead from "../layouts/BaseHead.astro";
 ---
 
 <!-- Below is your "component template." It's just HTML, but with
      some magic sprinkled in to help you build great templates. -->
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Work+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <BaseHead title="About" />
   </head>
   <body>
     <HeaderNav client:load />

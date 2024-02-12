@@ -1,8 +1,10 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html } from "lit";
 import { Task } from "@lit/task";
+import { repeat } from "lit/directives/repeat.js";
 import { customElement } from "lit/decorators.js";
 import { getCollection } from "astro:content";
 import "./BlogCard";
+import { listStyles } from "../../styles/lists";
 
 @customElement("blog-list")
 export class BlogList extends LitElement {
@@ -21,14 +23,31 @@ export class BlogList extends LitElement {
 
   render() {
     return html`
-      ${this.getBlogs.render({
-        pending: () => html`<p>Running task...</p>`,
-        complete: (blogs) =>
-          html`${blogs.map((b) => {
-            return html`<blog-card .blog=${b}></blog-card>`;
-          })} `,
-        error: (error) => html`<p>Oops, something went wrong: ${error}</p>`,
-      })}
+      <div class="post-list__container">
+        ${this.getBlogs.render({
+          pending: () => html`<p>Running task...</p>`,
+          complete: (blogs) =>
+            html`${repeat(
+              blogs,
+              (blog) => blog.data.date,
+              (blog, index) => html`<blog-card .blog=${blog}></blog-card>`
+            )}`,
+          error: (error) => html`<p>Oops, something went wrong: ${error}</p>`,
+        })}
+      </div>
     `;
+  }
+
+  static styles() {
+    return [
+      listStyles,
+      css`
+        .post-list__container {
+          padding: 100px;
+          background-color: blue;
+          border: 20px solid red;
+        }
+      `,
+    ];
   }
 }

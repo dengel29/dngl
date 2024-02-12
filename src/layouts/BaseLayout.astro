@@ -4,7 +4,7 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
 
 <div class="bg">
   <div class="full-screen">
-    <HeaderNav />
+    <HeaderNav client:load />
     <div class="main-content-border">
       <div class="main-content-container">
         <slot name="main-content">
@@ -33,10 +33,20 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
     );
     --light-gradient-border: linear-gradient(
       49.9deg,
-      rgb(208, 246, 255) 0.1%,
-      rgb(255, 237, 237) 47.9%,
-      rgb(255, 255, 231) 100.2%
+      rgb(205, 219, 222) 0.1%,
+      rgb(77, 72, 72) 47.9%,
+      rgb(233, 233, 221) 100.2%
     );
+    @media (prefers-color-scheme: dark) {
+      --gradient-border: var(--dark-gradient-border);
+    }
+    @media (prefers-color-scheme: light) {
+      --gradient-border: var(--light-gradient-border);
+    }
+    @media (width < 768px) {
+      --border-size: 0px;
+      --w: 100vw;
+    }
   }
   .bg {
     --dotSize: 0.08rem;
@@ -71,14 +81,18 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
     height: var(--h);
     border-radius: var(--border-radius);
     margin: 0 auto;
-    background-image: var(--dark-gradient-border);
+    background-image: var(--gradient-border);
     display: grid;
     place-items: center;
-  }
-  .main-content-container {
     @media (width < 768px) {
       padding-inline: unset;
+      margin-inline: unset;
+      border-top: none;
+      background-image: transparent;
+      width: 100vw;
     }
+  }
+  .main-content-container {
     filter: initial;
     color: var(--text-1);
     background-color: var(--surface-1);

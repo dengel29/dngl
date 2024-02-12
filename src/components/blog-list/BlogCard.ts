@@ -21,7 +21,7 @@ export class BlogCard extends LitElement {
   protected render() {
     return html`
       <div class="blog-card__container">
-        <a .href="/blog/${this.blog.slug}" class="blog-card__inner">
+        <a .href="/blog/${this.blog.slug}" class="blog-card__container">
           <h2 class="blog-card__title">${this.blog.data.title}</h2>
           <div class="blog-card__details">
             <span>${this._formatDate()}</span>

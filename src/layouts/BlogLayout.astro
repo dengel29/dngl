@@ -7,7 +7,13 @@ const { frontmatter: fm, headings } = Astro.props;
 <article class="page-wrapper">
   <div class="page-header">
     <h1 class="page-headline">{fm.title}</h1>
-    <h2>{fm.date}</h2>
+    <date>
+      {
+        Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+          new Date(fm.date)
+        )
+      }
+    </date>
   </div>
 
   <!-- <img src={fm.examplePic} alt="" /> -->

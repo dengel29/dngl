@@ -17,6 +17,12 @@ dependencies:
   '@lit/task':
     specifier: ^1.0.0
     version: 1.0.0
+  '@nanostores/lit':
+    specifier: ^0.2.0
+    version: 0.2.0(lit@3.1.1)(nanostores@0.9.5)
+  '@nanostores/persistent':
+    specifier: ^0.9.1
+    version: 0.9.1(nanostores@0.9.5)
   '@webcomponents/template-shadowroot':
     specifier: ^0.2.1
     version: 0.2.1
@@ -26,14 +32,14 @@ dependencies:
   lit:
     specifier: ^3.1.1
     version: 3.1.1
+  nanostores:
+    specifier: ^0.9.5
+    version: 0.9.5
   open-props:
     specifier: ^1.6.17
     version: 1.6.17
 
 devDependencies:
-  '@cloudflare/workers-types':
-    specifier: ^4.20240117.0
-    version: 4.20240117.0
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -358,10 +364,6 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@cloudflare/workers-types@4.20240117.0:
-    resolution: {integrity: sha512-HQU8lJhaJVh8gQXFtVA7lZwd0hK1ckIFjRuxOXkVN2Z9t7DtzNbA2YTwBry5thKNgF5EwjN4THjHg5NUZzj05A==}
-    dev: true
-
   /@emmetio/extract-abbreviation@0.1.6:
     resolution: {integrity: sha512-Ce3xE2JvTSEbASFbRbA1gAIcMcZWdS2yUYRaQbeM0nbOzaZrUYfa3ePtcriYRZOZmr+CkKA+zbjhvTpIOAYVcw==}
     dev: true
@@ -642,6 +644,25 @@ packages:
     resolution: {integrity: sha512-7jocGBh3yGlo3kKxQggZph2txK4X5GYNWp2FAsmV9u2spzUypwrzRzXe8I72icAb02B00+k2nlvxVcrQB6vyrw==}
     dependencies:
       '@lit/reactive-element': 2.0.3
+    dev: false
+
+  /@nanostores/lit@0.2.0(lit@3.1.1)(nanostores@0.9.5):
+    resolution: {integrity: sha512-slKYnuPOgS0+E0twx54SNtHqXWA0S2/Rdm/iZHHmFUyqblYRuDQlp2LrPQR6YmQwr/Ji+5/XDRUYkI1Mdy7giQ==}
+    peerDependencies:
+      lit: ^2.6.0 || ^3.0.0
+      nanostores: ^0.7 || ^0.8 || ^0.9
+    dependencies:
+      lit: 3.1.1
+      nanostores: 0.9.5
+    dev: false
+
+  /@nanostores/persistent@0.9.1(nanostores@0.9.5):
+    resolution: {integrity: sha512-ow57Hxm5VMaI5GHET/cVk8hX/iKMmbhcGrB9owfN8p8OHiiJgUlYxe1giacwlAALJXAh2t8bxXh42hHb64BCEA==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      nanostores: ^0.9.0
+    dependencies:
+      nanostores: 0.9.5
     dev: false
 
   /@netlify/functions@2.5.1:
@@ -2510,6 +2531,11 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: false
+
+  /nanostores@0.9.5:
+    resolution: {integrity: sha512-Z+p+g8E7yzaWwOe5gEUB2Ox0rCEeXWYIZWmYvw/ajNYX8DlXdMvMDj8DWfM/subqPAcsf8l8Td4iAwO1DeIIRQ==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     dev: false
 
   /napi-build-utils@1.0.2:
