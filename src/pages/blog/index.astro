@@ -2,13 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { BlogList } from "../../components/blog-list/BlogList";
 import BaseHead from "../../layouts/BaseHead.astro";
+import "../../styles/index.css";
 ---
 
 <html>
   <head>
-    <BaseHead title="Blog – Dan Engel">
-      <link rel="stylesheet" href="../../src/styles/index.css" slot="styles" />
-    </BaseHead>
+    <BaseHead title="Blog – Dan Engel" />
   </head>
   <body>
     <BaseLayout>
