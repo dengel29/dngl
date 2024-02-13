@@ -3,12 +3,10 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
 ---
 
 <div class="bg">
-  <div class="full-screen">
-    <HeaderNav client:load />
-    <div class="main-content-border">
-      <div class="main-content-container">
-        <slot name="main-content" />
-      </div>
+  <HeaderNav client:load />
+  <div class="main-content-border">
+    <div class="main-content-container">
+      <slot name="main-content" />
     </div>
   </div>
 </div>
@@ -66,10 +64,7 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
     margin: 0;
     padding: 0;
   }
-  .full-screen {
-    width: 100%;
-    height: 92vh;
-  }
+
   .main-content-border {
     width: var(--w);
     height: var(--h);
