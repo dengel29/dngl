@@ -14,8 +14,8 @@ import "../../styles/index.css";
       <div slot="main-content">
         <div id="post-grid">
           <BlogList client:load />
-          <span>
-            blog
+          <span class="titler">
+            <span> blog</span>
             <div id="circle"></div>
           </span>
         </div>
@@ -27,8 +27,9 @@ import "../../styles/index.css";
         grid-template-columns: 1fr 0.5fr;
         height: inherit;
         width: 100%;
+        overflow: hidden;
       }
-      span {
+      .titler {
         position: relative;
         justify-self: flex-end;
         text-transform: uppercase;
@@ -38,16 +39,29 @@ import "../../styles/index.css";
         height: inherit;
         overflow: hidden;
         height: 100%;
+        margin: 0px -30%;
+        z-index: 0;
+        span {
+          mix-blend-mode: difference;
+          margin-top: 25%;
+        }
       }
       #circle {
-        background: yellow;
-        height: 250px;
-        width: 250px;
+        filter: blur(20deg) contrast(120);
+        background: linear-gradient(
+          49.9deg,
+          rgb(208, 246, 255) 0.1%,
+          rgb(255, 237, 237) 47.9%,
+          rgb(255, 255, 231) 100.2%
+        );
+        height: 350px;
+        width: 350px;
         aspect-ratio: 1/1;
         border-radius: 50%;
         position: absolute;
-        left: 70%;
+        left: 20%;
         top: 30%;
+        z-index: -1;
       }
     </style>
   </body>

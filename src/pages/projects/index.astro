@@ -12,23 +12,24 @@ import "../../styles/index.css";
   <body>
     <BaseLayout>
       <div slot="main-content">
-        <div id="project-grid">
+        <div id="post-grid">
           <ProjectList client:load />
-          <span>
-            projects
+          <span class="titler">
+            <span>projects</span>
             <div id="circle"></div>
           </span>
         </div>
       </div>
     </BaseLayout>
     <style>
-      #project-grid {
+      #post-grid {
         display: grid;
         grid-template-columns: 1fr 0.5fr;
         height: inherit;
         width: 100%;
+        overflow: hidden;
       }
-      span {
+      .titler {
         position: relative;
         justify-self: flex-end;
         text-transform: uppercase;
@@ -36,18 +37,29 @@ import "../../styles/index.css";
         writing-mode: vertical-lr;
         margin-inline-start: 0em;
         height: inherit;
-        overflow: hidden;
         height: 100%;
+        margin: 0px -30%;
+        z-index: 0;
+        & span {
+          mix-blend-mode: difference;
+        }
       }
       #circle {
-        background: yellow;
-        height: 250px;
-        width: 250px;
+        filter: blur(20deg) contrast(120);
+        background: linear-gradient(
+          49.9deg,
+          rgb(208, 246, 255) 0.1%,
+          rgb(255, 237, 237) 47.9%,
+          rgb(255, 255, 231) 100.2%
+        );
+        height: 550px;
+        width: 550px;
         aspect-ratio: 1/1;
         border-radius: 50%;
         position: absolute;
-        left: 70%;
-        top: 30%;
+        left: 20%;
+        top: 10%;
+        z-index: -1;
       }
     </style>
   </body>
