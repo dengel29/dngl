@@ -1,6 +1,6 @@
 ---
-import type { ProjectFrontMatter } from "../types/Project";
-type Props = ProjectFrontMatter;
+import type { ProjectData, ProjectFrontMatter } from "../types/Project";
+type Props = ProjectData;
 const { frontmatter: fm, headings } = Astro.props;
 function _formatDate(date: Date) {
   return Intl.DateTimeFormat("en-US", {
