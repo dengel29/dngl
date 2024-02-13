@@ -8,7 +8,6 @@ export const rootStyles = css`
 `;
 
 export const ppStyles= (visited) => {
-  console.log('from css', visited)
   if (visited) {
     return css`
     .letter:is(:nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(7)) {

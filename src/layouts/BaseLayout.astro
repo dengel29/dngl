@@ -7,13 +7,7 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
     <HeaderNav client:load />
     <div class="main-content-border">
       <div class="main-content-container">
-        <slot name="main-content">
-          <p>
-            Main content served here (hint: the root element of the main content
-            element should have the following attribute
-            <code>slot="main-content")</code>
-          </p>
-        </slot>
+        <slot name="main-content" />
       </div>
     </div>
   </div>
@@ -98,6 +92,6 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
     max-height: calc(var(--h) - var(--border-size));
     max-width: calc(var(--w) - var(--border-size));
     overflow-y: scroll;
-    padding-inline: 1em;
+    padding-inline-start: 1em;
   }
 </style>

@@ -4,6 +4,7 @@ import { customElement } from "lit/decorators.js";
 import { getCollection } from "astro:content";
 import "./ProjectCard";
 import { listStyles } from "../../styles/lists";
+import { repeat } from "lit/directives/repeat.js";
 
 @customElement("project-list")
 export class ProjectList extends LitElement {
@@ -14,6 +15,7 @@ export class ProjectList extends LitElement {
       const sortedProjects = projects
         .filter((p) => p.data.draft !== true)
         .sort((a, b) => b.data.endDate.valueOf() - a.data.endDate.valueOf());
+      console.log(sortedProjects);
       return sortedProjects;
     },
     args: () => [],
@@ -21,20 +23,35 @@ export class ProjectList extends LitElement {
 
   render() {
     return html`
-      <div class="post-list__container">
-        ${this._getProjects.render({
-          pending: () => html`<p>Running task...</p>`,
-          complete: (sortedProjects) =>
-            html`${sortedProjects.map((p) => {
-              return html`<project-card .project=${p}></project-card>`;
-            })} `,
-          error: (error) => html`<p>Oops, something went wrong: ${error}</p>`,
-        })}
-      </div>
+      ${this._getProjects.render({
+        pending: () => html`<p>Running task...</p>`,
+        complete: (sortedProjects) =>
+          html`${repeat(
+            sortedProjects,
+            (project) => project.data.startDate.valueOf,
+            (project, index) =>
+              html`<project-card .project=${project}></project-card>`
+          )}`,
+        error: (error) => html`<p>Oops, something went wrong: ${error}</p>`,
+      })}
     `;
   }
 
   static get styles() {
-    return [listStyles];
+    return [
+      listStyles,
+      css`
+        .grid {
+          border: 1px solid red;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          height: fit-content;
+        }
+        span {
+          margin-inline-start: 100%;
+          writing-mode: vertical-rl;
+        }
+      `,
+    ];
   }
 }

@@ -19,10 +19,8 @@ export class XCheckbox extends LitElement {
           flex-direction: row;
           align-items: center;
           box-sizing: content-box;
-          border: 1px dashed var(--surface-1);
           padding: 2px 2px;
           &:has(input:focus) {
-            border: 1px dashed var(--text-1);
             border-radius: 3px;
           }
         }

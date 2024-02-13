@@ -6,8 +6,8 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import { getCollection } from "astro:content";
 import type { Project } from "../../types/Project";
 type Props = Project;
-import "../../styles/project-post.css";
 import "../../styles/index.css";
+import "../../styles/project-post.css";
 
 export const prerender = true;
 export async function getStaticPaths() {

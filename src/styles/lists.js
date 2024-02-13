@@ -1,6 +1,7 @@
 import {css} from 'lit'
 export const listStyles = css`
     a {
+      color: var(--link-text);
       text-decoration: none;
       font-family: var(--font-1);
     }

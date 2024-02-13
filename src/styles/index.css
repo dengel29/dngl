@@ -17,9 +17,9 @@
   -webkit-text-size-adjust: 100%;
 
   --brand: --var(--green-9);
-  --font-1: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
-  --font-2: 'Work Sans', sans-serif;
-  --font-3: 'Isotek Web', sans-serif;
+  --font-1: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-2: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-3: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --root-font-sz: 16px;
   font-size: var(--root-font-sz);
   --font--sz-100: 1rem;
@@ -95,8 +95,10 @@ html {
   color: var(--text-1);
   a {
     color: var(--link-text);
+    width: fit-content;
     &:visited {
-      color:purple
+      color:var(--surface-1);
+      background-color:var(--text-1);
     }
   }
   accent-color: var(--link);

@@ -15,7 +15,7 @@ export class BlogList extends LitElement {
       const sortedBlogs = blogs.sort(
         (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
       );
-      console.log(sortedBlogs[0].data.date);
+
       return sortedBlogs;
     },
     args: () => [],
