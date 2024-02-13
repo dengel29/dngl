@@ -6,6 +6,8 @@ import { Blog, BlogData } from "../../types/Blog";
 // 1. Get the slug from the incoming server request
 import { getCollection, CollectionEntry } from "astro:content";
 export const prerender = true;
+import "../../styles/index.css";
+import "../../styles/blog-post.css";
 
 export async function getStaticPaths() {
   const blogEntries: Blog[] = await getCollection("blog");
@@ -22,8 +24,6 @@ const { Content } = await entry.render();
 <html>
   <head>
     <BaseHead title={entry.data.title} />
-    <link rel="stylesheet" href="/src/styles/project-post.css" />
-    <link rel="stylesheet" href="/src/styles/index.css" />
   </head>
   <body>
     <BaseLayout>

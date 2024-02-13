@@ -6,6 +6,8 @@ import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import { getCollection } from "astro:content";
 import type { Project } from "../../types/Project";
 type Props = Project;
+import "../../styles/project-post.css";
+import "../../styles/index.css";
 
 export const prerender = true;
 export async function getStaticPaths() {
@@ -23,8 +25,6 @@ const { Content } = await entry.render();
 <html>
   <head>
     <BaseHead title={entry.data.title} />
-    <link rel="stylesheet" href="/src/styles/project-post.css" />
-    <link rel="stylesheet" href="/src/styles/index.css" />
   </head>
   <body>
     <BaseLayout>
