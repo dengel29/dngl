@@ -52,17 +52,14 @@ export class HeaderNav extends LitElement {
     return html`
       <header class=${classMap(classes)}>
         <div class="nav-content">
-          <label
-            id="open-nav"
-            style="color: white; padding-inline-start: 2.6vw"
-          >
-            <span style="font-size: 1.6em;">▦</span>
-            <input type="checkbox" style="transform: scale(0,0)" />
-          </label>
           <nav>
             <a href="/" class="name-heading"> ${this.getTitleLook()} </a>
             <div class="nav-items">${navItems}</div>
           </nav>
+          <label id="nav-reveal-checkbox">
+            <span style="font-size: 1.6em;">▦</span>
+            <input type="checkbox" style="transform: scale(0,0)" />
+          </label>
         </div>
       </header>
     `;
@@ -76,7 +73,7 @@ export class HeaderNav extends LitElement {
         :host {
           --start-padding: 2.6vw;
           text-transform: lowercase;
-          color: transparent;
+          color: var(--text-1);
         }
         header {
           height: 4.8em;
@@ -97,6 +94,7 @@ export class HeaderNav extends LitElement {
             place-items: center;
             align-self: flex-start;
             margin-top: 0.5em;
+            color: var(--text-1);
             span {
               cursor: pointer;
               transform: rotate(45deg) translateY(-2px);
@@ -113,8 +111,9 @@ export class HeaderNav extends LitElement {
           .nav-content {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            max-width: fit-content;
+            width: 25%;
           }
           .nav-items {
             display: flex;
@@ -128,6 +127,7 @@ export class HeaderNav extends LitElement {
             }
           }
           .nav-content:has(input[type="checkbox"]:checked) {
+            color: white;
             position: absolute;
             top: 0;
             left: 0;
@@ -139,11 +139,9 @@ export class HeaderNav extends LitElement {
             z-index: 2;
             padding-block-end: 1em;
             .nav-items {
-              color: white;
               overflow-y: initial;
               height: fit-content;
               opacity: 1;
-              justify-content: initial;
             }
           }
         }
@@ -151,7 +149,7 @@ export class HeaderNav extends LitElement {
         nav {
           overflow-x: hidden;
           min-height: 7vh;
-          padding-inline-start: var(--start-padding);
+
           @media (width > 768) {
             .nav-items {
               min-width: 40vw;
@@ -172,8 +170,9 @@ export class HeaderNav extends LitElement {
         .nav-content {
           box-sizing: content-box;
           border-radius: 4px;
-          width: 95vw;
+          width: 92vw;
           margin-bottom: 0.6rem;
+          padding-inline-start: var(--start-padding);
         }
         a {
           margin-inline-end: 1em;

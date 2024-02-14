@@ -11,14 +11,12 @@ import "../../styles/index.css";
   </head>
   <body>
     <BaseLayout>
-      <div slot="main-content">
-        <div id="post-grid">
-          <BlogList client:load />
-          <span class="titler">
-            <span> blog</span>
-            <div id="circle"></div>
-          </span>
-        </div>
+      <div id="post-grid" slot="main-content">
+        <BlogList client:load />
+        <span class="titler">
+          blog
+          <div id="circle"></div>
+        </span>
       </div>
     </BaseLayout>
     <style>
@@ -27,6 +25,7 @@ import "../../styles/index.css";
         grid-template-columns: 1fr 0.5fr;
         height: inherit;
         width: 100%;
+        height: 100%;
         overflow: hidden;
       }
       .titler {
@@ -34,34 +33,65 @@ import "../../styles/index.css";
         justify-self: flex-end;
         text-transform: uppercase;
         font-size: clamp(5em, 10vw + 4em, 22em);
+        letter-spacing: -0.08cap;
         writing-mode: vertical-lr;
         margin-inline-start: 0em;
         height: inherit;
         overflow: hidden;
-        height: 100%;
-        margin: 0px -30%;
+        margin: 0px -20%;
+        height: 80%;
         z-index: 0;
-        span {
-          mix-blend-mode: difference;
-          margin-top: 25%;
+        border-bottom-left-radius: 50em;
+        @media (prefers-color-scheme: dark) {
+          color: var(--text-1);
+        }
+        @media (prefers-color-scheme: light) {
+          color: hsl(50, 90%, 60%);
         }
       }
       #circle {
-        filter: blur(20deg) contrast(120);
-        background: linear-gradient(
-          49.9deg,
-          rgb(208, 246, 255) 0.1%,
-          rgb(255, 237, 237) 47.9%,
-          rgb(255, 255, 231) 100.2%
-        );
+        @media (prefers-color-scheme: dark) {
+          mix-blend-mode: difference;
+          background: linear-gradient(
+            120deg,
+            hsla(219, 43%, 71%, 1) 0.1%,
+            hsla(0, 100%, 96%, 0.91) 47.9%,
+            hsla(60, 94%, 60%) 180.2%
+          );
+        }
+        @media (prefers-color-scheme: light) {
+          mix-blend-mode: color-dodge;
+          background: linear-gradient(
+            600deg,
+            rgb(0, 85, 231) 0.1%,
+            hsla(297, 64%, 60%, 0.91) 47.9%,
+            rgb(255, 255, 243) 180.2%
+          );
+        }
         height: 350px;
         width: 350px;
         aspect-ratio: 1/1;
         border-radius: 50%;
         position: absolute;
-        left: 20%;
-        top: 30%;
-        z-index: -1;
+        left: 45%;
+        bottom: 50%;
+        z-index: 1;
+        animation: rotate 21s infinite alternate ease-in-out;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(360deg) skewY(-20deg) translateY(70px);
+        }
+        20% {
+          transform: translateX(100deg);
+        }
+        ,
+        50% {
+          transform: rotate(0deg) skewY(-50deg) skewX(-10deg);
+        }
+        100% {
+          transform: rotate(-180deg) skewY(0deg) scale(4, 4);
+        }
       }
     </style>
   </body>
