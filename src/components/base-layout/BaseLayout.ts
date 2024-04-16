@@ -80,7 +80,7 @@ export class BaseLayout extends LitElement {
         }
         .main-content-container {
           @media (width < 768px) {
-            padding-inline: unset;
+            padding-inline: initial;
           }
           color: var(--text-1);
           background-color: var(--surface-1);

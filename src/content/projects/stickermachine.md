@@ -1,9 +1,9 @@
 ---
 title: "StickerMachine"
-indexImage: /images/stickermachine/stickermachine.png
-indexImageAlt: "A social image created to share Stickermachine on WeChat"
-heroImage: /images/stickermachine/sticker_2.png
-heroImageAlt: ''
+indexImage: "@images/stickermachine/stickermachine.png"
+indexAlt: "A social image created to share Stickermachine on WeChat"
+heroImage: "@images/stickermachine/sticker_2.png"
+heroAlt: ''
 projectDescription: Ruby on Rails 
 order: 5
 projectBrief: A WeChat miniprogram to put an infinite sticker library at your fingertips
@@ -16,7 +16,7 @@ tech:
   - WeChat Miniprogram
   - Dokku
 role: Back-end
-# inActionVideo: /images/kappamon/kap-in-action.mp4
+# inActionVideo: https://dngl-bucket.s3.amazonaws.com/kappamon/kap-in-action.mp4
 startDate: December 2017 
 endDate: December 2019
 ---
@@ -24,7 +24,6 @@ endDate: December 2019
 Me and [Grace Yang](https://thegraceyang.com) had the goal of building an unlimited sticker (GIF) library for WeChat. Stickers at that time had to be purchased or compressed and imported through a laborious desktop process. While WeChat excelled in other aspects, the GIF keyboards of Facebook Messenger and iMessage gave more easy access to adding expressive GIFs to messages. While GIFs or stickers were big part of WeChat culture, there was no simple way to search and find a sticker based on keywords. StickerMachine aimed to fill that gap.
 
 ## How we did it
-!['A collage of GIFs from StickerMachine searches'](/images/stickermachine/stickermachine-3.png "A collage of GIFs from StickerMachine searches")
 Integrating with the Giphy API is easy enough: it's well documented, and we got that up and running in a demo miniprogram in no time. What was difficult was everything that followed. There are strict content restrictions to publishing web content in China, which impacted our release of the miniprogram in two main ways.
 
 The first is that WeChat miniprograms do not allow APIs from non-Chinese servers to serve content to them. So directly calling the Giphy API does not work, unless they had a mirror of their site on a Chinese server, which they do not. This required us to build one ourselves.

@@ -1,9 +1,9 @@
 ---
 title: "Kappamon"
-indexImage: /images/kappamon/index-image.png
-indexImageAlt: "Proun 1 D, 1919 (oil on canvas) by El Lissitzky (1890-1941)"
-heroImage: /images/kappamon/kappamon_graphic.svg
-heroImageAlt: 'The Kappamon homescreen hero image, a smiling robot sitting at a desk ready to livestream'
+indexImage: '@images/kappamon/index-image.png'
+indexAlt: "Proun 1 D, 1919 (oil on canvas) by El Lissitzky (1890-1941)"
+heroImage: 'https://dngl-bucket.s3.amazonaws.com/kappamon/kappamon_graphic.svg'
+heroAlt: 'The Kappamon homescreen hero image, a smiling robot sitting at a desk ready to livestream'
 projectDescription: Fullstack for Streamers
 order: 4
 projectBrief: Kappmamon is an interactive pixel stream pet for Twitch, Mixer, and other live-streaming services.
@@ -19,7 +19,7 @@ tech:
   - Mixer API
   - Web Sockets
 role: Front-End Developer
-inActionVideo: /images/kappamon/kap-in-action.mp4
+inActionVideo: 'https://dngl-bucket.s3.amazonaws.com/kappamon/kap-in-action.mp4'
 startDate: February 2019 
 endDate: May 2019
 visible: true
@@ -33,7 +33,7 @@ After 2 years of successfully serving a community of over 1000 livestreamers, Ka
 <div style="display:flex; align-items:center; justify-content:space-between">
 If you're unfamiliar with modern video livestreaming, here's a brief backgrounder on the different pieces that come together to make Kappamon work.
 
-<video src="/images/kappamon/idling.mp4" loop autoplay height="150px"></video>
+<video src="https://dngl-bucket.s3.amazonaws.com/kappamon/idling.mp4" loop autoplay height="150px"></video>
 </div>
 
 ### Phaser
@@ -54,7 +54,7 @@ Phaser generates an HTML5 canvas with the Kappamon pet started in a default, usu
 
 Websockets are using the official Twitch or Mixer APIs to listen to the chat for certain events (subscriptions, cheers, specific !commands). When these events happen, they'll trigger different controller actions, most of which start animations which have been decided by the streamer in their user dashboard at [Kappamon](https://kappamon.com). The pet will dance, eat food, open a present, respond with a speech bubble, and so on.
 
-!['The Kappamon dashboard'](/images/kappamon/kappamon-triggers.png "The Kappamon dashboard")
+!['The Kappamon dashboard'](https://d2opfsmmrbhnsw.cloudfront.net/kappamon/kappamon-triggers.png "The Kappamon dashboard")
 
 ## Accomplishments
 In the 4 months I worked with Kappamon, I had two major contributions and code which is now running in production and serving Kappamon's users. 
@@ -62,13 +62,13 @@ In the 4 months I worked with Kappamon, I had two major contributions and code w
 ### Hypemeter
 Streamers often have donation goals, so Kappamon wanted a meter that could visualize these goals and their progress. I created a meter element that lets streamers set a donation goal and uses Websockets to listen for cheer or donation events. When these events were triggered, the meter would fill. The element reflects amount accumulated and how close the accumulated cheers are to reaching the streamer's goal.
 
-<video src="/images/kappamon/hypemeter.mp4" loop autoplay width="90%" style="justify-content:center"></video>
+<video src="https://dngl-bucket.s3.amazonaws.com/kappamon/hypemeter.mp4" loop autoplay width="90%" style="justify-content:center"></video>
 
 ### Refactor and Upgrade Phaser Code
 
  In order to have more elements – pets, or the hypemeter – and control them independently, Kappamon's front-end code (internally referred to as "streamer-side") required a thorough refactor. The essence of the refactor was how the Phaser game instance was created: the then-existing code  had a straightforward but inflexible implementation based on Phaser v1. To meet the new requirements, I had to update all Phaser code to v3 to take advantage of the Scene API and refactored the existing code to be a single Scene instead of the entire Game. This allowed for a more composable instantiation of each Phaser game, which could now have multiple sprites or entities to be on-screen at once, interacting with one other. 
 
 ## Try Kappamon
-<video src="/images/kappamon/kappamon-market.mp4" loop autoplay width="90%" style="justify-content:center"></video>
+<video src="https://dngl-bucket.s3.amazonaws.com/kappamon/kappamon-market.mp4" loop autoplay width="90%" style="justify-content:center"></video>
 * Visit the site: [Kappamon](https://kappamon.com/)
 * Join the [Discord](https://discord.gg/6nfKQEU) 

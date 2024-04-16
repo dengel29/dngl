@@ -10,7 +10,6 @@ import { listStyles } from "../../styles/lists";
 export class BlogList extends LitElement {
   private getBlogs = new Task(this, {
     task: async ([], {}) => {
-      // return await getCollection("blog");
       const blogs = await getCollection("blog");
       const sortedBlogs = blogs.sort(
         (a, b) => b.data.date.valueOf() - a.data.date.valueOf()

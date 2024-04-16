@@ -95,12 +95,9 @@ html {
   color: var(--text-1);
   a {
     color: var(--link-text);
-    width: fit-content;
-    &:visited {
-      color:var(--surface-1);
-      background-color:var(--text-1);
-    }
+    /* width: fit-content; */
   }
+  overflow-x:hidden;
   accent-color: var(--link);
 
   input {
@@ -215,7 +212,7 @@ pre {
 }
 article {
     background-color: var(--surface-1);
-    overflow-x: hidden;
+  overflow-x: hidden;
     h1,h2,h3,h4 {
       font-family: var(--font-1);
       color: var(--text-1)
@@ -230,3 +227,5 @@ article {
     color: var(--text-1)
   }
 }
+
+

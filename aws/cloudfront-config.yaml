@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  CloudFrontDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Comment: CloudFront Distribution for dngl-bucket
+        Enabled: true
+        DefaultCacheBehavior:  # Add DefaultCacheBehavior property here
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          ForwardedValues:
+            Cookies:
+              Forward: none
+            QueryString: true 
+          TargetOriginId: S3-dngl-bucket
+          ViewerProtocolPolicy: redirect-to-https
+        Origins:
+          - DomainName: dngl-bucket.s3.amazonaws.com
+            Id: S3-dngl-bucket
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+        DefaultRootObject: index.html

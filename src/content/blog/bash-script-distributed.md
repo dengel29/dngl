@@ -1,6 +1,7 @@
 ---
 title: 'A Simple Bash Script'
 date: '2020-08-10'
+indexAlt: ""
 ---
 When doing server maintenance you might find yourself walking back to the same file paths again and again, to, say, check logs or something like that. I found myself doing that recently, and figured a way to make the process a little less laborious was to make a way to quickly add aliases to to any remote server's `.bashrc` from a given folder. Run a command, create an alias, then never have to type out the full path again.
 

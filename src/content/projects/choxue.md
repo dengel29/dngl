@@ -1,9 +1,9 @@
 ---
 title: "Choxue"
-indexImage: /images/cx/cxleague-home.jpg
-indexImageAlt: "Home page of the CX League website"
-heroImage: /images/cx/cxleague-home.jpg
-heroImageAlt: 'Home page of the CX League website'
+indexImage: https://dngl-bucket.s3.amazonaws.com/cx/cxleague-home.jpg
+indexAlt: "Home page of the CX League website"
+heroImage: https://dngl-bucket.s3.amazonaws.com/cx/cxleague-home.jpg
+heroAlt: 'Home page of the CX League website'
 projectDescription: Product Lead at Sports Startup
 order: 1
 projectBrief: Choxue is a basketball league on a mission to make sports a part of education in Taipei, with the help of technology.
@@ -32,7 +32,7 @@ When I joined Choxue in late 2019, their mission was "to make sports a part of e
 
 The one major barrier to students who want to participate (besides getting the okay from their principal and paying a registration fee) was their transcript: they need a minimum GPA to be placed on their team's roster. This was clearly a promising idea because both Nike and Fubon Bank sponsored the league (and previously Under Armor did as well). 
 
-![The concept for the new logo for Choxue](/images/cx/cho-xue.jpg "The concept for the new logo for Choxue")
+![The concept for the new logo for Choxue](https://d2opfsmmrbhnsw.cloudfront.net/cx/cho-xue.jpg "The concept for the new logo for Choxue")
 
 In 2017, when Choxue's original platform was built, however, the product was very different. Choxue had built a platform to film and edit sports highlights, inspired by sports-intellgience businesses [Krossover](https://www.crunchbase.com/organization/krossover-intelligence). 
 
@@ -44,7 +44,7 @@ I spent about one month auditing their legacy system, code base, digital assets,
 
 I then shifted towards working on some internal as well as customer-facing tools that would expedite laborious processes that otherwise required an inordinate amount of man-hours. 
 
-![The blog feature on the new Choxue league website](/images/cx/cxleague-blog.png "The blog feature on the new Choxue league website")
+![The blog feature on the new Choxue league website](https://d2opfsmmrbhnsw.cloudfront.net/cx/cxleague-blog.png "The blog feature on the new Choxue league website")
 
 ## Building a Transcript Collection Tool
 
@@ -68,7 +68,7 @@ After about 3 months, I went from knowing zero Angular 2 or .NET to building out
 
 A sudden decision by the CEO to cut ties with Choxue's stats and service provider gave a short window to strategize for several key issues, including how to manage data from users until a new system was ready. 
 
-![Screenshot of the design for the boxscore element](/images/cx/boxscore-screenshot.png "Screenshot of the design for the boxscore element")
+![Screenshot of the design for the boxscore element](https://d2opfsmmrbhnsw.cloudfront.net/cx/boxscore-screenshot.png "Screenshot of the design for the boxscore element")
 
 ### Creating a Temporary League Website and Data-store
 After negotiating the handover of data with the stats company we previously worked with, I created an intermediate data-store with [Airtable](https://airtable.com) and a [website](http://cxleague.com) with Ruby on Rails to display the data. Inputting stats was a challenge, because it took bespoke, real-time systems to keep track of that data, but I was able to make a minimum viable solution with Airtable with relational tables connecting teams, groups, and individuals with formulas to calculate things like shot-percentage. It was a good mock of the previous system.
@@ -82,7 +82,7 @@ With a temporary solution in place and a home for the on-going basketball league
 
 What's more, I was still unconvinced that the highlight system was critical to the business – in fact, the storage of that much video was one of the biggest tech expenditures, and we were not monetizing it at all. At this point, after months of making my case to our CEO, I had stopped trying to change his mind about reviving the old platform.
 
-![Screenshot of the league view of the games schedule](/images/cx/cxleague-schedule.png "Screenshot of the league view of the games schedule")
+![Screenshot of the league view of the games schedule](https://d2opfsmmrbhnsw.cloudfront.net/cx/cxleague-schedule.png "Screenshot of the league view of the games schedule")
 
 After 6 months of refactoring and documenting everything about the platform, it still hadn't gotten to the point where it would be completely user-ready. During this time, I had been interviewing other developers to assist with the task. I interviewed 15 developers over 4 months; 5 very promising ones were sent through to the next interview round with my CEO, and all were rejected. 
 

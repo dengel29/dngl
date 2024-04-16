@@ -87,6 +87,12 @@ import { HeaderNav } from "../components/header-nav/HeaderNav";
     max-height: calc(var(--h) - var(--border-size));
     max-width: calc(var(--w) - var(--border-size));
     overflow-y: scroll;
-    padding-inline-start: 1em;
+    direction: rtl;
+    :first-child:not(span) {
+      direction: ltr;
+    }
+    > * {
+      padding-inline-start: 1em;
+    }
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 title: Updating My Website From My Phone
 date: '2020-08-26'
+indexAlt: ""
 ---
 
 I’ve always wanted to have a “What I’m reading”  section on my website. I’ve also wanted it to be possible to update it from my phone, since that’s where I do most of my reading. I’m happy to say I’ve succeeded in putting together a *very* minimalistic pipeline. Here’s a simple overview of how it works:

@@ -6,9 +6,9 @@ export type ProjectData = Project["data"];
 export type ProjectFrontMatter = MarkdownLayoutProps<{
   title: string;
   indexImage: string;
-  indexImageAlt: string;
+  indexAlt: string;
   heroImage: string | null;
-  heroImageAlt: string;
+  heroAlt: string;
   projectDescription: string;
   order: number;
   projectBrief: string;

@@ -31,7 +31,9 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "forceConsistentCasingInFileNames": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {}
   },
   "extends": "astro/tsconfigs/base",
   "include": ["src/**/*.ts"],

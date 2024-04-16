@@ -85,6 +85,11 @@ export class HeaderNav extends LitElement {
           justify-content: space-between;
           max-width: 45vw;
         }
+        #nav-reveal-checkbox {
+          span::selection {
+            background-color: transparent;
+          }
+        }
         label {
           display: none;
         }

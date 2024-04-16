@@ -20,6 +20,6 @@ export const listStyles = css`
     }
 
     .post-list__container {
-      padding-inline: 20px;
+      
     }
   `

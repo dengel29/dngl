@@ -38,20 +38,6 @@ export class ProjectList extends LitElement {
   }
 
   static get styles() {
-    return [
-      listStyles,
-      css`
-        .grid {
-          border: 1px solid red;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          height: fit-content;
-        }
-        span {
-          margin-inline-start: 100%;
-          writing-mode: vertical-rl;
-        }
-      `,
-    ];
+    return [listStyles];
   }
 }

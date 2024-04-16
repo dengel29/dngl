@@ -1,6 +1,7 @@
 ---
 title: Using videogrep and youtube-dl to make supercuts
 date: '2020-12-17'
+indexAlt: ""
 ---
 Videogrep can make supercuts from videos by referencing the content and timestamps subtitle file. If you're using videos downloaded from YouTube, you're either getting auto-generated or creator-supplied subtitles. It's not immediately clear how to get this done, because it's a sort of old program, not updated frequently, and the error messages don't tell you exactly what's going wrong .
 

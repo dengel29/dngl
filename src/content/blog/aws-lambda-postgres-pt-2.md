@@ -1,6 +1,7 @@
 ---
 title: 'Part 2 Connecting AWS Lambda To A Postgres DB'
 date: '2020-10-05'
+indexAlt: ""
 ---
 
 ##### In the [previous post](/blog/part-1-connecting-aws-lambda-to-a-postgres-db/), we got our Serverless function running locally, but hadn't set up our production database. In the process of doing that, this post deals with setting up an AWS RDS instance, configuring the security group to allow access, configuring the serverless.yaml file to hold different values for dev and prod environments, and setting up a Postgres Lambda Layer. It's a lot to cover, so let's get cracking!
@@ -12,7 +13,7 @@ Because this is going to be an AWS Lambda, we’re going to set up some AWS reso
 
 Here I’m going to defer to Amazon’s instructions on [how to purchase and set up an RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html). Follow their instructions up to the point where they begin discussing security groups. Very important: when creating the database, do not forget open the “Additional Configuration” section and enter a database name! If you don’t give it a name the database will not be created.
 
-![Additional configuration page for rds setup](/images/aws-pg/aws-pg-additional-config.png)
+![Additional configuration page for rds setup](https://d2opfsmmrbhnsw.cloudfront.net/aws-pg/aws-pg-additional-config.png)
 
 Also important: when you create a password for the database, do not forget it! Write it down somewhere. All the other information we’ll need soon can be read straight from the console if we ever forget it, but the database password is not so easily retrievable. 
 
@@ -21,7 +22,7 @@ If you don’t do anything to the security group rules, you’ll end up with a C
 
 In order to change the security group rules, simply click the link under VPC security groups, which will take you to the page where you can configure it. 
 
-![The settings page showing Connectivity & Security of an RDS instance](/images/aws-pg/aws-pg-rds-settings.png)
+![The settings page showing Connectivity & Security of an RDS instance](https://d2opfsmmrbhnsw.cloudfront.net/aws-pg/aws-pg-rds-settings.png)
 
 From that page, scroll down to find the ‘Edit Inbound Rules’ section and change the rules to look like the ones in the screenshot below: 
 Two rules with 
@@ -31,7 +32,7 @@ Two rules with
 
 One of those rules with source 0.0.0.0/0 and the other with ::/0. 
 
-![The settings for a security group to be able to access a Postgres instance](/images/aws-pg/aws-pg-security-group-settings.png) 
+![The settings for a security group to be able to access a Postgres instance](https://d2opfsmmrbhnsw.cloudfront.net/aws-pg/aws-pg-security-group-settings.png) 
 
 Save rules and go back to your RDS. Keep the window with our RDS instance open because we’re going to use some of the info shortly.
 
@@ -172,7 +173,7 @@ If you’ve installed Postgres before, you should see some file paths returned f
 
 Your folder structure should now look like this:
 
-![The final file structure should look like this](/images/aws-pg/aws-pg-file-structure-2.png)
+![The final file structure should look like this](https://d2opfsmmrbhnsw.cloudfront.net/aws-pg/aws-pg-file-structure-2.png)
 
 Next you’ll add some more configuration to your `serverless.yml`  which will instruct Serverless to upload the layer to AWS, and have your Lambda utilize the layer. By doing this little configuration, Serverless takes care of most of the AWS configuration for  you. 
 

@@ -1,6 +1,7 @@
 ---
 title: Making Supercuts from Youtube Videos
 date: "2021-03-18"
+indexAlt: ""
 ---
 
 This is a little write-up of my little project [supercut.fun](https://supercut.fun).
@@ -50,7 +51,7 @@ I also drew inspiration from Algolia's [youtube-captions-scraper](https://github
 8. On UX/UI — From its conception was a functionality-driven project, and aesthetics and user-experience were considered secondarily. I think that didn't bite me in the ass for this project because thankfully there aren't too many UI components, but if I approached a more complex project like this I think I would've ended up regretting it. Special thanks to [Grace Yang](http://thegraceyang.com) for taking time to give broad UX/UI recommendations.
 9. Do it live! — one of the first things I did after achieving proof of concept was make it live. Buying a domain as step 1 of a project is a great way to get a little dopamine rush and then do nothing. Buying a domain and then making your crappy side-project live is a great way to push yourself to keep updating and improving.
 
-![An earlier version of supercut.fun](/images/uploads/screen-shot-2021-02-23-at-3.59.37-pm.png "An earlier version of supercut.fun")
+![An earlier version of supercut.fun](https://d2opfsmmrbhnsw.cloudfront.net/uploads/screen-shot-2021-02-23-at-3.59.37-pm.png "An earlier version of supercut.fun")
 
 [Supercut.fun](http://supercut.fun) in an earlier iteration, circa February 2021
 

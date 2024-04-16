@@ -1,9 +1,9 @@
 ---
 title: "Epic x Steam"
-indexImage: /images/kappamon/index-image.png
-indexImageAlt: ""
-heroImage: 
-heroImageAlt: ''
+indexImage: '@images/kappamon/index-image.png'
+indexAlt: ""
+heroImage: "@images/maze/maze.png" 
+heroAlt: ''
 projectDescription: Serverless Quicklook Games DB
 order: 2
 projectBrief: Epic x Steam is a technical experiment for me, and a way to quickly answer the question "is this game available on Epic, Steam, or both?"

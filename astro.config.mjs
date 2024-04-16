@@ -6,5 +6,8 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   integrations: [lit()],
   output: "server",
-  adapter: netlify({edgeMiddleware: true})
+  adapter: netlify({edgeMiddleware: true, imageCDN: false,}),
+  vite: {define: {
+    __IMAGE_URL__: JSON.stringify('https://dngl-bucket.s3.amazonaws.com/')
+  }}
 });

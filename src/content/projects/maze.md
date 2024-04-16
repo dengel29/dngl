@@ -1,9 +1,9 @@
 ---
 title: "Maze"
-indexImage: /images/maze/maze.png
-indexImageAlt: "The maze, solved"
-heroImage: /images/maze/maze.png
-heroImageAlt: 'The mze, solved'
+indexImage: '@images/maze/maze.png'
+indexAlt: "The maze, solved"
+heroImage: '@images/maze/maze.png'
+heroAlt: 'The mze, solved'
 projectDescription: Pathfinding algorithms and animations
 order: 3
 projectBrief: A personal project to build a satisfyingly animated pathfinding algorithm.
@@ -15,7 +15,7 @@ tech:
   - GreenSock
   - Netlify
 role: Mazemaster
-inActionVideo: /images/maze/maze-in-action-1.m4v
+inActionVideo: https://dngl-bucket.s3.amazonaws.com/maze/maze-in-action-1.m4v
 startDate: April 2021 
 endDate: May 2021
 visible: true
@@ -35,5 +35,5 @@ Bottom line is I wanted more joyous exploration, with a dollop of *learning some
 
 I did not do this for fun, since it's way more fun to solve a maze yourself than to to watch a maze get solved. It is *satisfying*, in a way, but it is not necessarily fun. 
 
-![Evolution of mazes](/images/maze/mazes.png "what")
+![Evolution of mazes](https://d2opfsmmrbhnsw.cloudfront.net/maze/mazes.png "what")
 

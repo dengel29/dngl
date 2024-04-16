@@ -1,6 +1,7 @@
 ---
 title: 'Part 1 Connecting AWS Lambda To A Postgres DB'
 date: '2020-10-05'
+indexAlt: ""
 ---
 <details>
 <summary>An aside: There are so many options for creating a serverless function, and so many of my failed attempts were at finding the one "framework" that worked for me. Long story short, I picked Serverless Framework. Skip this section if you don't want to read about all the options.</summary>
@@ -108,7 +109,7 @@ The link above can help with creating models too; for this tutorial we're going 
 
 At this point your project file structure should look like this:
 
-![file structure at this point of project](/images/aws-pg/aws-pg-file-structure-1.png)
+![file structure at this point of project](https://d2opfsmmrbhnsw.cloudfront.net/aws-pg/aws-pg-file-structure-1.png)
 
 ### Connecting to the local database in the application
 
