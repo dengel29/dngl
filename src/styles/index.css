@@ -211,17 +211,18 @@ pre {
   overflow-x: scroll;
 }
 article {
-    background-color: var(--surface-1);
+  background-color: var(--surface-1);
   overflow-x: hidden;
-    h1,h2,h3,h4 {
-      font-family: var(--font-1);
-      color: var(--text-1)
-    }
-    p, li {
-      font-family: var(--font-3)
-    }
-    aside, blockquote, details {
-      color: var(--text-1)
+  h1,h2,h3,h4 {
+    font-family: var(--font-1);
+    color: var(--text-1)
+  }
+  p, li {
+    font-family: var(--font-3)
+  }
+  aside, blockquote, details {
+    color: var(--text-1);
+    margin-inline-start: 1.2em;
   }
   summary::marker {
     color: var(--text-1)

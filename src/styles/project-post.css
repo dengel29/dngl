@@ -2,6 +2,9 @@ summary::marker {
   color: blue
 }
 article { 
+  .project-header {
+    padding-inline-start: 1rem;
+  }
   .project-skills .project-tech {
     display:flex;
     flex-direction: row;
@@ -19,7 +22,20 @@ article {
   }
 }
 
+.page-content {
+  p:not(:has(img,video)), h1,h2,h3,h4 {
+    padding-inline-start: 1rem;
+  }
+
+  blockquote {
+    margin-inline-start: 2rem;
+  > p {
+    padding-inline-start: 0em;
+  }}
+}
+
 .project-summary__wrapper {
+  padding-inline-start: 1em;
   p.company-brief {
     line-height: initial;
   }  
@@ -56,4 +72,7 @@ article {
 
 p {
   max-width: 64ch;
+  :has(image) {
+    padding-inline-start: 0em;
+  }
 }

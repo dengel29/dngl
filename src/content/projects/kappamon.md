@@ -31,7 +31,7 @@ After 2 years of successfully serving a community of over 1000 livestreamers, Ka
 ## Background: The Tech Behind Kappamon (and Livestreaming)
 
 <div style="display:flex; align-items:center; justify-content:space-between">
-If you're unfamiliar with modern video livestreaming, here's a brief backgrounder on the different pieces that come together to make Kappamon work.
+<p>If you're unfamiliar with modern video livestreaming, here's a brief backgrounder on the different pieces that come together to make Kappamon work.</p>
 
 <video src="https://dngl-bucket.s3.amazonaws.com/kappamon/idling.mp4" loop autoplay height="150px"></video>
 </div>
