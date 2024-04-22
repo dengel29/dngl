@@ -15,9 +15,10 @@ export class DGrid extends LitElement {
     return [
       css`
         .home {
+          margin: initial;
+          padding: initial;
           display: grid;
           height: 100%;
-          width: 100vw;
           place-items: center;
         }
         .grid {
