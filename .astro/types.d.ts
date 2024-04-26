@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"animated-grid.md": {
+	id: "animated-grid.md";
+  slug: "animated-grid";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "aws-lambda-postgres-pt-1.md": {
 	id: "aws-lambda-postgres-pt-1.md";
   slug: "aws-lambda-postgres-pt-1";

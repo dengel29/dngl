@@ -22,7 +22,7 @@ article {
   }
 }
 
-.page-content {
+.page-content, .page-wrapper {
   p:not(:has(img,video)), h1,h2,h3,h4 {
     padding-inline-start: 1rem;
   }
