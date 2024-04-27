@@ -3,7 +3,7 @@
   p:not(:has(img,video)), h1,h2,h3,h4, date {
     padding-inline-start: 1rem;
   }
-  details, summary, pre {
+  summary, pre {
     padding-inline-start: 0em;
     margin-inline-start: 0em;
   }
@@ -11,19 +11,32 @@
   details {
     border-bottom: 4px solid var(--text-1);
     transition: all 1s;
+    padding-inline-start: 0em;
+    margin-inline-start: 0em;
+    padding-block: 0em;
     summary {
-      display: grid;
-      grid-template-columns: .1fr 1fr;
+      display: flex;
       align-items: center;;
       transition: all 1s;
       font-size: var(--font--sz-200);
       font-weight: initial;
       list-style: none;
+      -webkit-list-style:none;
+      margin-block:auto;
       text-wrap:pretty;
       &::before {
-        content: '•';
+        content: "⊙";
+        display: flex;
+        color: violet;
+        justify-content: center;
+        align-items: center;
         font-size: var(--font--sz-400);
         padding-inline: 1em;
+        width: 20px; 
+        margin-block-end: 4px;
+      }
+      &::-webkit-details-marker {
+        display: none;
       }
     }
     & > *:not(summary) {
@@ -41,6 +54,7 @@
     }
     summary::before {
       color: violet;
+      content: '•';
     }
     border-bottom: 4px solid violet
   }

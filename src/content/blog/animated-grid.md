@@ -110,13 +110,13 @@ All the shrunken rows will be the same size, as will all the rows that grow. Tha
 All that math gets us the values of how big rows will grow and shrink. The only thing left to do is put them in the `grid-template-*` declarations, where you decide which rows are going to grow and which ones will shrink.
 
 <details><summary>Be careful to avoid pitfalls at this stage</summary>
-
-For the effect to work, you keep consistent the number of rows/columns and you originally set, as well as a number of shrunken/grown rows. 
+For the effect to work, you keep consistent the number of rows/columns you originally set, as well as a number of shrunken/grown rows. 
 
 If the cells of the grid start jumping around, you know you got the number of rows or columns wrong. If the grid container is getting bigger or smaller at certain steps of the animation, you know you grew or shrunk too many. 
 
 Even if all the calculations are good, you can get this wrong so pay attention while setting these.
 </details>
+<br>
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="VwNggzz" data-preview="true" data-editable="true" data-user="dengel29" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/dengel29/pen/VwNggzz">
