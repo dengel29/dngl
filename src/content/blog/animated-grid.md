@@ -47,13 +47,13 @@ This explained why some earlier attempts I made at animating the grid **items** 
 
 ## The key to a nice-looking animated grid
 
-One thing I took for granted is that when a row or column shrinks or grows, if the other rows and columns don't also change in shape, the **entire grid** will change. For some cases this might be fine, but the reason the animated Mondrian looks good is because the grid container is always the same width and height, and only the cells within it are shrinking or growing.
+One thing I took for granted is that when a row or column shrinks or grows, if the other rows and columns don't also change in size accordingly, the **entire grid** will change. For some cases this might be fine, but the reason the animated Mondrian looks good is because the grid container is always the same width and height, and only the cells within it are shrinking or growing.
 
 ## Setting up our grid and variables with `calc()`
 
 `calc()` makes this really easy to do this. I won't re-write all the code here, but I'll give a brief explanation of the math behind it.
 
-Save the maximum width and heights of your intended grid into CSS variables, I called mine `--max-h` and `--max-w`. So something like 
+Save the maximum width and heights of your intended grid into CSS variables, I called mine `--max-h` and `--max-w`. So something like the following:
 
 ```css
 .grid { 
@@ -62,13 +62,16 @@ Save the maximum width and heights of your intended grid into CSS variables, I c
 }
 ``` 
 
-It'll also be useful to save variables storing your total rows and columns, since removing or adding columns creates jank in the animation.
+It's also useful to have your total rows and columns stored in variables, for a few reasons: removing or adding columns creates jank in the animation, and the total rows/columns is critical info for calculating how big or small they should become.
 
-Now if you want evenly sized cells, we can just divide the `--max-h` by `--total-rows`. Then apply that size in your definition of the `grid-template-rows` rule. Grid's `repeat` syntax can help you in this case from being repetitive. Something like: 
+Now if you want evenly sized cells, we can just divide the `--max-h` by `--total-rows`. Then apply that size in your definition of the `grid-template-rows` rule. Grid's `repeat` syntax can help you here, like this:
 ```css
-.grid { 
+.grid {
+    --max-h: 700px;
+    --total-rows: 3;
+    --row-size: calc(--max-h / --total-rows);
     grid-template-rows: repeat(
-      var(--total-rows, var(--row-size))
+      var(--total-rows), var(--row-size)
     )
 }
 ```
@@ -81,14 +84,12 @@ Be aware: we **can** use `repeat()` here in the initial declaration, but the ani
 
 If a cell inside grows, at least one other cell will need to shrink so we don't grow larger than our original grid.
 
-`calc()` helps a lot here as well. You can find the CSS under the `@keyframes simple-example` in the [Codepen](https://codepen.io/dengel29/pen/VwNggzz).
-
-Let's start with figuring out the rows' grow and shrink sizes. We decide how many rows we want to shrink, then we use that number to figure out how small each We only need 2 more pieces of information make our calculations:
+Let's just figure out the rows' grow and shrink sizes, since we can use the same principles to figure out columns later. We only need to decide two more things:
 
 1. how many rows are shrinking
 2. how small should they be
 
-After figure those out, we use `calc()` to figure out how big the large ones should grow. Here's just that CSS
+After deciding, we use `calc()` to figure out how big the large ones should grow. Here's just that CSS
 
 ```css
 @keyframes simple-example {
@@ -97,7 +98,9 @@ After figure those out, we use `calc()` to figure out how big the large ones sho
     --rows-sm: 2;
     /* --rows-lg: how many grows will grow */
     --rows-lg: calc(var(--total-rows) - var(--rows-sm));
-    /* --sm-row-size was declared earlier, so we have access to that var here */
+    /* the size we want rows to shrink to */
+    --sm-row-size: 2vmin;
+    /* the size we want rows to grow to */
     --lg-row-size: calc((var(--max-h) - (var(--sm-row-size) * var(--rows-sm))) / var(--rows-lg));
     /* final step is manually setting which rows grow and which ones shrink */
     /* rows 1 and 3 shrink, and row 2 grows */
