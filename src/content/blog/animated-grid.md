@@ -113,6 +113,7 @@ All the shrunken rows will be the same size, as will all the rows that grow. Tha
 All that math gets us the values of how big rows will grow and shrink. The only thing left to do is put them in the `grid-template-*` declarations, where you decide which rows are going to grow and which ones will shrink.
 
 <details><summary>Be careful to avoid pitfalls at this stage</summary>
+
 For the effect to work, you keep consistent the number of rows/columns you originally set, as well as a number of shrunken/grown rows. 
 
 If the cells of the grid start jumping around, you know you got the number of rows or columns wrong. If the grid container is getting bigger or smaller at certain steps of the animation, you know you grew or shrunk too many. 

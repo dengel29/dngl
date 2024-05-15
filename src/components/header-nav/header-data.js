@@ -1,18 +1,14 @@
 export const data = [
   {
-    "displayName": "/blog",
-    "path": "/blog"
+    displayName: "/blog",
+    path: "/blog",
   },
   {
-    "displayName": "/notes⚠️",
-    "path": ""
+    displayName: "/projects",
+    path: "/projects",
   },
   {
-    "displayName": "/now⚠️",
-    "path": ""
+    displayName: "/lab",
+    path: "/lab",
   },
-  {
-    "displayName": "/projects",
-    "path": "/projects"
-  }
-]
+];

@@ -1,0 +1,361 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseHead from "../layouts/BaseHead.astro";
+import "../styles/index.css";
+
+let json = [
+  {
+    title: "HIIT for creators",
+    blurb:
+      " An interface for fitness trainers doing HIIT classes over Zoom. Inspired during covid, made for my own trainer.",
+    future: "",
+    tech: [""],
+  },
+];
+---
+
+<html>
+  <head>
+    <BaseHead title="Home – Dan Engel" />
+    <link rel="stylesheet" href="../src/styles/index.css" slot="styles" />
+    <style>
+      #post-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.3fr;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-inline-start: 1em;
+        transition: 0.21s all;
+        .titler {
+          opacity: 1;
+        }
+        @media (width < 768px) {
+          grid-template-columns: 1fr 0fr;
+          .titler {
+            opacity: 0;
+            /* transform: scale(1.2, 1.2); */
+            transform-origin: 150% -150%;
+          }
+        }
+      }
+      .exp-list {
+        padding-block-end: 4em;
+        background: var(--surface-1);
+      }
+      .exp-item__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: last baseline;
+        margin-inline-end: 0px;
+        border-block-end: 0.1rem solid var(--text-1);
+        margin-block-end: 0.6rem;
+      }
+      .exp-item__links {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 4ch;
+        text-align: center;
+
+        align-self: center;
+        a {
+          padding-block: auto;
+        }
+      }
+      .exp-item {
+        width: 90%;
+        border: 3px solid white;
+        border-radius: 4px;
+        margin-block-end: 1em;
+        hr {
+          margin-block: 0em;
+          background-color: var(--text-1);
+          /* padding: 0.01rem; */
+          margin-block: 3px;
+        }
+      }
+      .exp-item__content {
+        padding-inline: 4px;
+      }
+      .titler {
+        transition-property: opacity, transform;
+        transition-duration: 0.2s, 0.5s;
+        position: sticky;
+        justify-self: flex-end;
+        text-transform: uppercase;
+        font-size: clamp(5em, 10vw + 4em, 22em);
+        letter-spacing: -0.08cap;
+        writing-mode: vertical-lr;
+        margin-inline-start: 0em;
+        padding-inline-end: 1em;
+        overflow: hidden;
+        height: fit-content;
+        top: 0px;
+        bottom: 0;
+        margin: 0px -20%;
+        z-index: 0;
+        border-bottom-left-radius: 50em;
+        @media (prefers-color-scheme: dark) {
+          color: var(--text-1);
+        }
+        @media (prefers-color-scheme: light) {
+          color: hsl(50, 90%, 60%);
+        }
+      }
+      #circle {
+        @media (prefers-color-scheme: dark) {
+          mix-blend-mode: difference;
+          background: linear-gradient(
+            120deg,
+            hsla(219, 43%, 71%, 1) 0.1%,
+            hsla(0, 100%, 96%, 0.91) 47.9%,
+            hsla(60, 94%, 60%) 180.2%
+          );
+        }
+        @media (prefers-color-scheme: light) {
+          mix-blend-mode: color-dodge;
+          background: linear-gradient(
+            600deg,
+            rgb(0, 85, 231) 0.1%,
+            hsla(297, 64%, 60%, 0.91) 47.9%,
+            rgb(255, 255, 243) 180.2%
+          );
+        }
+        height: 350px;
+        width: 350px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        position: absolute;
+        left: 45%;
+        bottom: 50%;
+        z-index: 1;
+        animation: rotate 42s infinite alternate ease-in-out;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(360deg) skewY(-20deg) translateY(70px);
+        }
+        20% {
+          transform: translateX(100deg);
+        }
+        ,
+        50% {
+          transform: rotate(0deg) skewY(-50deg) skewX(-10deg);
+        }
+        100% {
+          transform: rotate(-180deg) skewY(0deg) scale(4, 4);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <BaseLayout>
+      <div slot="main-content" id="main-content">
+        <div id="post-grid" slot="main-content">
+          <div class="exp-list">
+            <h1 style="padding-block-end: 0em">Little Experiments</h1>
+            <p>often unpolished, usually done</p>
+            <div class="exp-item">
+              <div class="exp-item__head">
+                <div>
+                  <h2>Inky</h2>
+                  <small>last commit: May 6, 2024</small>
+                </div>
+                <div class="exp-item__links" style="">
+                  <a href="https://inky.dngl.cc/">try it</a>
+                  <hr />
+                  <a
+                    style="margin-block-end:0em"
+                    href="https://github.com/dengel29/hover-segmenter">code</a
+                  >
+                </div>
+              </div>
+              <div class="exp-item__content">
+                <p>
+                  <strong>Inspired by</strong> pop-up dictionary browser extensions
+                  like Inkah
+                </p>
+                <p>
+                  <strong>Tech</strong> is <a href="https://catalyst.rocks/"
+                    >Catalyst</a
+                  >, as much web tech as possible, catalyst, as much web tech as
+                  possible
+                </p>
+                <p>
+                  <strong>Wish List</strong>
+                  <ul>
+                    <li>
+                      allow user to paste a link and get a <a
+                        href="https://www.npmjs.com/package/@mozilla/readability"
+                      >
+                        "reader view"</a
+                      > version of the article
+                    </li>
+                    <li></li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-item__head">
+                <div>
+                  <h2>Tribe Has Spoken</h2>
+                  <small>last commit: Apr 30, 2024</small>
+                </div>
+
+                <div class="exp-item__links" style="">
+                  <a href="https://ths.dngl.cc/">try it</a>
+                  <hr />
+                  <a
+                    style="margin-block-end:0em"
+                    href="https://github.com/dengel29/tribe-has-spoken">code</a
+                  >
+                </div>
+              </div>
+              <div class="exp-item__content">
+                <p>
+                  <strong>A drag and drop</strong> interface for visualizing Survivor
+                  votes
+                </p>
+                <p>
+                  <strong>Inspired by</strong> a messy live-whiteboard session
+                </p>
+                <p>
+                  <strong>Tech</strong> is <a href="https://catalyst.rocks/"
+                    >Catalyst</a
+                  >, as much web tech as possible, intersection observer and
+                  mutation observer
+                </p>
+                <p>
+                  <strong>Wish List</strong>
+                  <ul>
+                    <li>make it a little prettier</li>
+                    <li>
+                      generate workouts from selected focus (legs, arms, core,
+                      etc.)
+                    </li>
+                    <li>provide a bank of workouts for inspiration</li>
+                    <li>shuffle individual workouts with variations</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-item__head">
+                <div>
+                  <h2>HIIT For Creators</h2>
+                  <small>last commit: Jul 2, 2021</small>
+                </div>
+                <div class="exp-item__links" style="">
+                  <a href="https://hiit.dngl.cc/">try it</a>
+                  <hr />
+                  <a
+                    style="margin-block-end:0em"
+                    href="https://github.com/dengel29/exercise-stream/">code</a
+                  >
+                </div>
+              </div>
+              <div class="exp-item__content">
+                <p>
+                  <strong>Inspired by</strong> Zoom fitness classes during COVID,
+                  livestream tools
+                </p>
+                <p>
+                  <strong>Tech</strong> is just front-end Vue3. Transparent, draggable,
+                  customizable elements for streaming.
+                </p>
+                <p>
+                  <strong>Wish List</strong>
+                  <ul>
+                    <li>make it a little prettier</li>
+                    <li>
+                      generate workouts from selected focus (legs, arms, core,
+                      etc.)
+                    </li>
+                    <li>provide a bank of workouts for inspiration</li>
+                    <li>shuffle individual workouts with variations</li>
+                  </ul>
+                </p>
+                <p>
+                  <strong>I learned</strong>
+                  <ul>
+                    <li>
+                      URL params for state is very cool and useful if you don't
+                      care about the aesthetics of your URLs
+                    </li>
+                    <li>
+                      i can't believe url aesthetics are a thing, but also my
+                      website is as few letters as possible
+                    </li>
+                    <li>
+                      vue's "computed" function is awesome. it's a good
+                      framework tool in that it gives you a conceptional
+                      organizational tool (I use it for calculating workout +
+                      rest times)
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-item__head">
+                <div>
+                  <h2>Lil Pathfinder</h2>
+                  <small>last commit: Jul 5, 2021</small>
+                </div>
+                <div class="exp-item__links" style="">
+                  <a href="https://maze.dngl.cc/">try it</a>
+                  <hr />
+                  <a
+                    style="margin-block-end:0em"
+                    href="https://github.com/dengel29/vue-pathfinder">code</a
+                  >
+                </div>
+              </div>
+              <div class="exp-item__content">
+                <p>
+                  <strong>Inspired by</strong> paths, mazes
+                </p>
+                <p>
+                  <strong>Tech</strong> is just front-end Vue3. Also, Vuex a bit
+                  of XState
+                </p>
+                <p>
+                  <strong>Wish List</strong>
+                  <ul>
+                    <li>less griddy, more curvy</li>
+                    <li>display as line between, rather than grid itself</li>
+                  </ul>
+                </p>
+                <p>
+                  <strong>I learned</strong>
+                  <ul>
+                    <li>
+                      URL params for state is very cool and useful if you don't
+                      care about the aesthetics of your URLs
+                    </li>
+                    <li>
+                      i can't believe url aesthetics are a thing, but also my
+                      website is as few letters as possible
+                    </li>
+                    <li>
+                      vue's "computed" function is awesome. it's a good
+                      framework tool in that it gives you a conceptional
+                      organizational tool (I use it for calculating workout +
+                      rest times)
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <span class="titler">
+            <span>lab</span>
+            <div id="circle"></div>
+          </span>
+        </div>
+      </div>
+    </BaseLayout>
+  </body>
+</html>
